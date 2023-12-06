@@ -1,0 +1,158 @@
+<table width="100%" class="table-bordered" >
+  
+    <tr style="border-bottom: 2px solid black" width="100%">
+		<th>Sr.</th>
+      <th>Source</th>
+		<th>One Way</th>
+		<th>Seats Available</th>
+		<th align="center">Itineraries</th>
+		<th>Pricing</th>
+    </tr>
+	{%for d in data%}
+  <tr style="border-bottom: 2px solid black" width="100%">
+	   <td>{{d["id"]}}</td>
+      <td>{{d["source"]}}</td>
+		<td>{{d["oneWay"]}}</td>
+		<td>{{d["numberOfBookableSeats"]}}</td>
+		<td>
+			<table class="table-bordered" width="100%" border="1">
+		 	
+		    <tr>
+		      <th align="center">Duration</th>
+		      <th align="center">Segments</th>
+	        </tr>
+	        {% for i in d.itineraries%}
+		    <tr>
+		    	<td>{{i.duration}}</td>
+		    	<td>
+					{%for s in i.segments%}<br>
+					<table width="100%" border="1">
+					  <tbody>
+					    <tr>
+					      <td><strong>Carrier</strong></td>
+					      <td><strong>Number</strong></td>
+					      <td><strong>Aircraft Code</strong></td>
+				        </tr>
+					    <tr>
+					      <td>{{s.carrierCode}}</td>
+					      <td>{{s.number}}</td>
+					      <td>{{s.aircraft.code}}</td>
+				        </tr>
+				      </tbody>
+				  </table>
+<table width="100%"  border="1" >
+	    	  <tbody>
+		    	    <tr>
+		    	      <td>&nbsp;</td>
+		    	      <th>Departure</th>
+		    	      <th>Arrival</th>
+	    	        </tr>
+		    	    <tr>
+		    	      <th>IATA</th>
+		    	      <td>{{s.departure.iataCode}}</td>
+		    	      <td>{{s.arrival.iataCode}}</td>
+	    	        </tr>
+		    	    <tr>
+		    	      <th>At</th>
+		    	      <td>{{s.departure.at}}</td>
+		    	      <td>{{s.arrival.at}}</td>
+	    	        </tr>
+    	      </tbody>
+	    	    </table>
+					{%endfor%}
+				</td>
+		    </tr>
+			  {%endfor%}
+	     
+	    </table></td>
+		<td><table width="100%" border="1">
+		  <tbody>
+		    <tr>
+		      <td><strong>Currency</strong></td>
+		      <td><strong>Base</strong></td>
+		      <td><strong>Total</strong></td>
+	        </tr>
+		    <tr>
+		      <td>{{d.price.currency}}</td>
+		      <td>{{d.price.base}}</td>
+		      <td>{{d.price.total}}</td>
+	        </tr>
+	      </tbody>
+	    </table>
+		  <table width="100%" border="1">
+	        
+	          <tr>
+	            <td><strong>Type</strong></td>
+	            <td><strong>Amount</strong></td>
+            </tr>
+				{%for f in d.price.fees%}
+	          <tr>
+	            <td>{{f.type}}</td>
+	            <td>{{f.amount}}</td>
+              </tr>
+				{%endfor%}
+            
+          </table>
+        <p>&nbsp;</p></td>
+		
+		 </tr>
+	{%endfor%}
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="overlay-container"><h3><a href="javascript:void(0)" class="text-dark"><i class="fas fa-times"></i></a></h3> <div class="flight-list mt-2"><div class="row flex-row no-gutters border bg-light rounded"><div class="col-sm-9 col-md-10 col-12 border-right"><div class="row no-gutters px-2 py-1 card-header"><div class="col-12 col-sm-8 col-md-9"><h6 class="font-weight-600 pt-1 pb-0 text-2">Qatar Airways, Qatar Airways</h6></div> <div class="col-12 col-sm-4 col-md-3 text-right"><span class="text-success badge badge-light-success py-2 px-2">Refundable</span></div></div> <div class="row no-gutters px-2 py-2 "><div class="col-2 col-sm-2 text-center"><img alt="Qatar Airways" title="Qatar Airways" src="https://bookmepk.s3.eu-central-1.amazonaws.com/static/images/airlines/QR.svg" class="img-fluid airline-logo"></div> <div class="col-2 col-sm-2 text-center align-self-center"><span title="Fri, 18-Jun-2021 10:50 AM" class="d-block font-weight-600 text-3">10:50 AM</span> <small class="d-block text-muted">KHI</small></div> <div class="col-6 col-sm-6 text-center align-self-center"><div class="upper-content no-gutters align-self-center d-flex justify-content-center mb-1"><div title="Sat, 19-Jun-2021 08:00 AM" class="col-4 text-muted text-1">20H 30M</div><div title="Sat, 19-Jun-2021 11:55 PM" class="col-4 text-muted text-1">9H 20M</div></div> <div class="middle-content align-self-center d-flex justify-content-center"><div class="col-4"></div><div class="col-4"></div></div> <div class="lower-content no-gutters align-self-center d-flex justify-content-center mt-1"><div class="col-4 text-muted text-1">DOH</div><div class="col-4 text-muted text-1">MAD</div></div></div> <div class="col-2 col-sm-2 text-center align-self-center"><span title="Sun, 20-Jun-2021 07:40 AM" class="d-block font-weight-600 text-3">07:40 AM</span> <small class="d-block text-muted">SCL</small></div></div> <div class="border-top row no-gutters px-2 py-2 "><div class="col-2 col-sm-2 text-center"><img alt="Qatar Airways" title="Qatar Airways" src="https://bookmepk.s3.eu-central-1.amazonaws.com/static/images/airlines/QR.svg" class="img-fluid airline-logo"></div> <div class="col-2 col-sm-2 text-center align-self-center"><span title="Wed, 30-Jun-2021 11:25 AM" class="d-block font-weight-600 text-3">11:25 AM</span> <small class="d-block text-muted">SCL</small></div> <div class="col-6 col-sm-6 text-center align-self-center"><div class="upper-content no-gutters align-self-center d-flex justify-content-center mb-1"><div title="Thu, 01-Jul-2021 09:15 AM" class="col-4 text-muted text-1">3H 10M</div><div title="Fri, 02-Jul-2021 02:50 AM" class="col-4 text-muted text-1">9H 50M</div></div> <div class="middle-content align-self-center d-flex justify-content-center"><div class="col-4"></div><div class="col-4"></div></div> <div class="lower-content no-gutters align-self-center d-flex justify-content-center mt-1"><div class="col-4 text-muted text-1">MAD</div><div class="col-4 text-muted text-1">DOH</div></div></div> <div class="col-2 col-sm-2 text-center align-self-center"><span title="Fri, 02-Jul-2021 07:10 AM" class="d-block font-weight-600 text-3">07:10 AM</span> <small class="d-block text-muted">KHI</small></div></div></div> <div class="col-sm-3 col-md-2 py-3 col-12 text-center align-self-center"><!----> <span class="d-block text-dark font-weight-600 text-3 py-1">Rs 279,423</span> <small class="d-block text-1 text-danger mt-2">1 Passenger(s)</small></div></div></div> <div class="flight-details mt-2"><div class="card"><ul id="myTab" role="tablist" class="nav nav-tabs"><li class="nav-item w-100 border-right"><a id="first-tab" data-toggle="tab" href="#first" role="tab" aria-controls="first" aria-selected="false" class="nav-link active"><div class="row no-gutters text-muted pl-2 pl-sm-0"><div class="col-8 col-sm-6"><div class="text-1">Outbound</div> <div class="text-2 row no-gutters font-weight-600"><div class="col-auto">KHI</div> <div class="col-auto mx-2"><i class="fas fa-plane m-0"></i></div> <div class="col-auto">SCL</div></div></div> <div class="col-4 col-sm-6 text-right"><div class="text-1">2 Stops</div></div></div></a></li> <li class="nav-item w-100"><a id="second-tab" data-toggle="tab" href="#second" role="tab" aria-controls="second" aria-selected="false" class="nav-link"><div class="row no-gutters text-muted pl-2 pl-sm-0"><div class="col-8 col-sm-6"><div class="text-1">Inbound</div> <div class="text-2 row no-gutters font-weight-600"><div class="col-4">SCL</div> <div class="col-4 text-center"><i class="fas fa-plane"></i></div> <div class="col-4">KHI</div></div></div> <div class="col-4 col-sm-6 text-right"><div class="text-1">2 Stops</div></div></div></a></li></ul> <div id="myTabContent" class="tab-content"><div id="first" class="tab-pane fade active show"><div data-name="ASD" data-id="2" class="row flex-row px-2 py-2 no-gutters"><div class="col-12 my-3"><div class="row d-flex no-gutters"><div class="col-2"><img alt="Qatar Airways" title="Qatar Airways" src="https://bookmepk.s3.eu-central-1.amazonaws.com/static/images/airlines/QR.svg" class="img-fluid airline-logo"></div> <div class="col-10 text-3 font-weight-600 align-self-center pl-2">
+                                                Qatar Airways
+                                            </div></div> <div class="row"><div class="col-3 text-center"><div title="Fri, 18-Jun-2021 10:50 AM" class="font-weight-600 text-muted text-2">10:50 AM</div> <div class="text-muted text-1 my-2 py-3">QR611</div> <div title="Fri, 18-Jun-2021 11:30 AM" class="font-weight-600 text-muted text-2">11:30 AM</div></div> <div class="col-9 timeline"><div class="timeline-circle"><div class="font-weight-600 text-muted text-2">Karachi <small>( KHI )</small></div> <small class="text-muted text-1">Jinnah International Airport</small></div> <div title="Fri, 18-Jun-2021 10:50 AM" class="timeline-circle timeline-circle-not-show text-muted text-1 pb-3 pt-3"><span class="border rounded px-3 py-2"><i class="far fa-clock"></i>
+                                                        02H : 40M
+                                                    </span></div> <div class="timeline-circle"><div class="font-weight-600 text-muted text-2">Doha <small>( DOH )</small></div> <small class="text-muted text-1">Hamad International Airport</small></div></div></div></div> <div class="col-12"><div class="row no-gutters"><div class="col-8 bg-light-4 text-1 py-2 rounded text-dark font-weight-600"><div class="row no-gutters px-4"><div class="col-6">
+                                                        Layover in Doha
+                                                    </div> <div class="col-6 text-right"><i class="far fa-clock"></i>
+                                                        20H 30M
+                                                    </div></div></div></div></div><div class="col-12 my-3"><div class="row d-flex no-gutters"><div class="col-2"><img alt="Qatar Airways" title="Qatar Airways" src="https://bookmepk.s3.eu-central-1.amazonaws.com/static/images/airlines/QR.svg" class="img-fluid airline-logo"></div> <div class="col-10 text-3 font-weight-600 align-self-center pl-2">
+                                                Qatar Airways
+                                            </div></div> <div class="row"><div class="col-3 text-center"><div title="Sat, 19-Jun-2021 08:00 AM" class="font-weight-600 text-muted text-2">08:00 AM</div> <div class="text-muted text-1 my-2 py-3">QR149</div> <div title="Sat, 19-Jun-2021 02:35 PM" class="font-weight-600 text-muted text-2">02:35 PM</div></div> <div class="col-9 timeline"><div class="timeline-circle"><div class="font-weight-600 text-muted text-2">Doha <small>( DOH )</small></div> <small class="text-muted text-1">Hamad International Airport</small></div> <div title="Sat, 19-Jun-2021 08:00 AM" class="timeline-circle timeline-circle-not-show text-muted text-1 pb-3 pt-3"><span class="border rounded px-3 py-2"><i class="far fa-clock"></i>
+                                                        07H : 35M
+                                                    </span></div> <div class="timeline-circle"><div class="font-weight-600 text-muted text-2">Madrid <small>( MAD )</small></div> <small class="text-muted text-1">Adolfo Suárez Madrid–Barajas Airport</small></div></div></div></div> <div class="col-12"><div class="row no-gutters"><div class="col-8 bg-light-4 text-1 py-2 rounded text-dark font-weight-600"><div class="row no-gutters px-4"><div class="col-6">
+                                                        Layover in Madrid
+                                                    </div> <div class="col-6 text-right"><i class="far fa-clock"></i>
+                                                        9H 20M
+                                                    </div></div></div></div></div><div class="col-12 my-3"><div class="row d-flex no-gutters"><div class="col-2"><img alt="Qatar Airways" title="Qatar Airways" src="https://bookmepk.s3.eu-central-1.amazonaws.com/static/images/airlines/QR.svg" class="img-fluid airline-logo"></div> <div class="col-10 text-3 font-weight-600 align-self-center pl-2">
+                                                Qatar Airways
+                                            </div></div> <div class="row"><div class="col-3 text-center"><div title="Sat, 19-Jun-2021 11:55 PM" class="font-weight-600 text-muted text-2">11:55 PM</div> <div class="text-muted text-1 my-2 py-3">QR5354</div> <div title="Sun, 20-Jun-2021 07:40 AM" class="font-weight-600 text-muted text-2">07:40 AM</div></div> <div class="col-9 timeline"><div class="timeline-circle"><div class="font-weight-600 text-muted text-2">Madrid <small>( MAD )</small></div> <small class="text-muted text-1">Adolfo Suárez Madrid–Barajas Airport</small></div> <div title="Sat, 19-Jun-2021 11:55 PM" class="timeline-circle timeline-circle-not-show text-muted text-1 pb-3 pt-3"><span class="border rounded px-3 py-2"><i class="far fa-clock"></i>
+                                                        13H : 45M
+                                                    </span></div> <div class="timeline-circle"><div class="font-weight-600 text-muted text-2">Santiago <small>( SCL )</small></div> <small class="text-muted text-1">Comodoro Arturo Merino Benítez International Airport</small></div></div></div></div> <!----> <div class="col-12 mt-3 border-top"><div class="pt-2 text-2 font-weight-600"><i class="fas fa-exclamation-circle text-1 pr-1"></i>
+                                        Baggage Policy
+                                    </div> <div class="pl-4 text-1"><ul class="list-inline"><li>2P</li><li>BAGGAGE DISCOUNTS MAY APPLY BASED ON FREQUENT FLYER STATUS/ ONLINE CHECKIN/FORM OF PAYMENT/MILITARY/ETC.</li></ul></div></div></div></div> <div id="second" class="tab-pane fade"><div class="row flex-row px-2 py-2 no-gutters"><div class="col-12 my-3"><div class="row d-flex no-gutters"><div class="col-2"><img alt="Qatar Airways" title="Qatar Airways" src="https://bookmepk.s3.eu-central-1.amazonaws.com/static/images/airlines/QR.svg" class="img-fluid airline-logo"></div> <div class="col-10 text-3 font-weight-600 align-self-center pl-2">
+                                                Qatar Airways
+                                            </div></div> <div class="row"><div class="col-3 text-center"><div title="Wed, 30-Jun-2021 11:25 AM" class="font-weight-600 text-muted text-2">11:25 AM</div> <div class="text-muted text-1 my-2 py-3">QR5355</div> <div title="Thu, 01-Jul-2021 06:05 AM" class="font-weight-600 text-muted text-2">06:05 AM</div></div> <div class="col-9 timeline"><div class="timeline-circle"><div class="font-weight-600 text-muted text-2">Santiago <small>( SCL )</small></div> <small class="text-muted text-1">Comodoro Arturo Merino Benítez International Airport</small></div> <div title="Wed, 30-Jun-2021 11:25 AM" class="timeline-circle timeline-circle-not-show text-muted text-1 pb-3 pt-3"><span class="border rounded px-3 py-2"><i class="far fa-clock"></i>
+                                                        12H : 40M
+                                                    </span></div> <div class="timeline-circle"><div class="font-weight-600 text-muted text-2">Madrid <small>( MAD )</small></div> <small class="text-muted text-1">Adolfo Suárez Madrid–Barajas Airport</small></div></div></div></div> <div class="col-12"><div class="row no-gutters"><div class="col-8 bg-light-4 text-1 py-2 rounded text-dark font-weight-600"><div class="row no-gutters px-4"><div class="col-6">
+                                                        Layover in Madrid
+                                                    </div> <div class="col-6 text-right"><i class="far fa-clock"></i>
+                                                        3H 10M
+                                                    </div></div></div></div></div><div class="col-12 my-3"><div class="row d-flex no-gutters"><div class="col-2"><img alt="Qatar Airways" title="Qatar Airways" src="https://bookmepk.s3.eu-central-1.amazonaws.com/static/images/airlines/QR.svg" class="img-fluid airline-logo"></div> <div class="col-10 text-3 font-weight-600 align-self-center pl-2">
+                                                Qatar Airways
+                                            </div></div> <div class="row"><div class="col-3 text-center"><div title="Thu, 01-Jul-2021 09:15 AM" class="font-weight-600 text-muted text-2">09:15 AM</div> <div class="text-muted text-1 my-2 py-3">QR148</div> <div title="Thu, 01-Jul-2021 05:00 PM" class="font-weight-600 text-muted text-2">05:00 PM</div></div> <div class="col-9 timeline"><div class="timeline-circle"><div class="font-weight-600 text-muted text-2">Madrid <small>( MAD )</small></div> <small class="text-muted text-1">Adolfo Suárez Madrid–Barajas Airport</small></div> <div title="Thu, 01-Jul-2021 09:15 AM" class="timeline-circle timeline-circle-not-show text-muted text-1 pb-3 pt-3"><span class="border rounded px-3 py-2"><i class="far fa-clock"></i>
+                                                        06H : 45M
+                                                    </span></div> <div class="timeline-circle"><div class="font-weight-600 text-muted text-2">Doha <small>( DOH )</small></div> <small class="text-muted text-1">Hamad International Airport</small></div></div></div></div> <div class="col-12"><div class="row no-gutters"><div class="col-8 bg-light-4 text-1 py-2 rounded text-dark font-weight-600"><div class="row no-gutters px-4"><div class="col-6">
+                                                        Layover in Doha
+                                                    </div> <div class="col-6 text-right"><i class="far fa-clock"></i>
+                                                        9H 50M
+                                                    </div></div></div></div></div><div class="col-12 my-3"><div class="row d-flex no-gutters"><div class="col-2"><img alt="Qatar Airways" title="Qatar Airways" src="https://bookmepk.s3.eu-central-1.amazonaws.com/static/images/airlines/QR.svg" class="img-fluid airline-logo"></div> <div class="col-10 text-3 font-weight-600 align-self-center pl-2">
+                                                Qatar Airways
+                                            </div></div> <div class="row"><div class="col-3 text-center"><div title="Fri, 02-Jul-2021 02:50 AM" class="font-weight-600 text-muted text-2">02:50 AM</div> <div class="text-muted text-1 my-2 py-3">QR610</div> <div title="Fri, 02-Jul-2021 07:10 AM" class="font-weight-600 text-muted text-2">07:10 AM</div></div> <div class="col-9 timeline"><div class="timeline-circle"><div class="font-weight-600 text-muted text-2">Doha <small>( DOH )</small></div> <small class="text-muted text-1">Hamad International Airport</small></div> <div title="Fri, 02-Jul-2021 02:50 AM" class="timeline-circle timeline-circle-not-show text-muted text-1 pb-3 pt-3"><span class="border rounded px-3 py-2"><i class="far fa-clock"></i>
+                                                        02H : 20M
+                                                    </span></div> <div class="timeline-circle"><div class="font-weight-600 text-muted text-2">Karachi <small>( KHI )</small></div> <small class="text-muted text-1">Jinnah International Airport</small></div></div></div></div> <!----> <!----></div></div></div></div></div> <form action="https://bookme.pk/index.php/flights/booking_confirmation" method="POST" class="py-2 d-block"><input type="hidden" name="_token" value="AsWbHDME9r4S52L4ATB2wqh8KHLScrr5KLLd4u2K"> <input type="hidden" name="trip_type" value="return"> <input type="hidden" name="no_of_adults" value="1"> <input type="hidden" name="no_of_children" value="0"> <input type="hidden" name="no_of_infants" value="0"> <input type="hidden" name="ref_id" value="24457c35318a3cce188306396e5eba7c"> <input type="hidden" name="journey_ref_id" value="429ca20186042b310f868e574c393bca"> <button type="submit" class="btn btn-sm btn-primary d-block shadow-none rounded p-1 p-sm-2 w-100">BOOKME</button></form></div>

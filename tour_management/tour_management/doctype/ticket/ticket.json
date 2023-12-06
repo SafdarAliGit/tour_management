@@ -1,0 +1,956 @@
+{
+ "actions": [],
+ "autoname": "TM-AT-.YY.-.####",
+ "creation": "2021-07-06 02:31:59.234376",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "booking_reference",
+  "issuance_date",
+  "section_break_2",
+  "xo_agent",
+  "xo_number",
+  "xo_agent_name",
+  "fare_type",
+  "ticket_status",
+  "column_break_3",
+  "ticket_no",
+  "pnr_no",
+  "airline",
+  "bsp",
+  "column_break_4",
+  "pax_no",
+  "pax_name",
+  "flight_name",
+  "column_break_9",
+  "ticket_type",
+  "purchase_invoice_reference",
+  "attachments",
+  "section_break_7",
+  "sector",
+  "flight_code",
+  "column_break_17",
+  "departure",
+  "arrival",
+  "column_break_47",
+  "departure_class",
+  "arrival_class",
+  "column_break_10",
+  "departure_date",
+  "departure_time",
+  "column_break_26",
+  "arrival_date",
+  "arrival_time",
+  "cb32",
+  "is_return",
+  "return_section",
+  "rsector",
+  "rflight_code",
+  "column_break_31",
+  "rdeparture",
+  "rarrival",
+  "column_break_35",
+  "rdeparture_class",
+  "rarrival_class",
+  "column_break_38",
+  "rdeparture_date",
+  "rdeparture_time",
+  "column_break_44",
+  "rarrival_date",
+  "rarrival_time",
+  "connecting_section",
+  "csector",
+  "cflight_code",
+  "column_break_45",
+  "cdeparture",
+  "carrival",
+  "column_break_49",
+  "cdeparture_class",
+  "carrival_class",
+  "cb52",
+  "cdeparture_date",
+  "cdeparture_time",
+  "column_break_59",
+  "carrival_date",
+  "carrival_time",
+  "cb64",
+  "cis_return",
+  "connecting_return_section",
+  "crsector",
+  "crflight_code",
+  "cb_59",
+  "crdeparture",
+  "crarrival",
+  "column_break_63",
+  "crdeparture_class",
+  "crarrival_class",
+  "column_break_66",
+  "crdeparture_date",
+  "crdeparture_time",
+  "column_break_74",
+  "crarrival_date",
+  "crarrival_time",
+  "section_break_26",
+  "market_fare",
+  "apt",
+  "oas",
+  "column_break_29",
+  "fed",
+  "ftt",
+  "oad",
+  "column_break_32",
+  "svc_rate",
+  "svc_amount",
+  "dof",
+  "column_break_52",
+  "srb_rate",
+  "srb_amount",
+  "ins",
+  "ced",
+  "column_break_55",
+  "ptt",
+  "pq",
+  "cb58",
+  "yq",
+  "yr",
+  "section_break_61",
+  "kbr",
+  "kbp",
+  "column_break_64",
+  "com_rate",
+  "com_amount",
+  "column_break_67",
+  "wht_rate",
+  "wht_amount",
+  "include_wht_in_price",
+  "column_break_70",
+  "sp_rate",
+  "sp_amount",
+  "column_break_58",
+  "or_rate",
+  "or_amount",
+  "column_break_51",
+  "city_tax_rate",
+  "city_tax_amount",
+  "discount_rate",
+  "discount_amount",
+  "ticket_return_details_section",
+  "returned",
+  "cb125",
+  "purchase_service_charges",
+  "column_break_125",
+  "sales_service_charges",
+  "tickets_cost_details_section",
+  "ticket_for",
+  "column_break_54",
+  "ticket_cost",
+  "column_break_57",
+  "ticket_price",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "booking_reference",
+   "fieldtype": "Link",
+   "label": "Booking Reference",
+   "options": "Tour Booking",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "xo_agent",
+   "fieldtype": "Link",
+   "label": "XO Agent",
+   "options": "XO Agent"
+  },
+  {
+   "fetch_from": "xo_agent.xo_number",
+   "fieldname": "xo_number",
+   "fieldtype": "Data",
+   "label": "XO Number",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "xo_agent.agent_name",
+   "fieldname": "xo_agent_name",
+   "fieldtype": "Data",
+   "label": "XO Agent Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "fare_type",
+   "fieldtype": "Link",
+   "label": "Fare Type",
+   "options": "Fare Type"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "ticket_status",
+   "fieldtype": "Select",
+   "label": "Ticket Status",
+   "options": "Pending\nConfirmed"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ticket_no",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Ticket No",
+   "reqd": 1
+  },
+  {
+   "fieldname": "pnr_no",
+   "fieldtype": "Data",
+   "label": "PNR No"
+  },
+  {
+   "fieldname": "airline",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Airline",
+   "options": "Airline"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pax_no",
+   "fieldtype": "Data",
+   "label": "PAX No"
+  },
+  {
+   "fieldname": "pax_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "PAX Name",
+   "search_index": 1
+  },
+  {
+   "fetch_from": "airline.airline_abbr",
+   "fieldname": "flight_name",
+   "fieldtype": "Data",
+   "label": "Flight Name"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ticket_type",
+   "fieldtype": "Link",
+   "label": "Ticket Type",
+   "options": "Ticket Type"
+  },
+  {
+   "fieldname": "purchase_invoice_reference",
+   "fieldtype": "Link",
+   "label": "Purchase Invoice Reference",
+   "options": "Purchase Invoice",
+   "read_only": 1
+  },
+  {
+   "fieldname": "attachments",
+   "fieldtype": "Attach",
+   "label": "Attachments"
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sector",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Sector"
+  },
+  {
+   "fieldname": "flight_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Flight Code"
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "departure",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Departure",
+   "options": "City"
+  },
+  {
+   "fieldname": "arrival",
+   "fieldtype": "Link",
+   "label": "Arrival",
+   "options": "City"
+  },
+  {
+   "fieldname": "column_break_47",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "departure_class",
+   "fieldtype": "Link",
+   "label": "Departure Class",
+   "options": "Airline Class"
+  },
+  {
+   "fieldname": "arrival_class",
+   "fieldtype": "Link",
+   "label": "Arrival Class",
+   "options": "Airline Class"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "departure_date",
+   "fieldtype": "Date",
+   "label": "Departure Date"
+  },
+  {
+   "fieldname": "departure_time",
+   "fieldtype": "Data",
+   "label": "Departure Time"
+  },
+  {
+   "fieldname": "column_break_26",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "arrival_date",
+   "fieldtype": "Date",
+   "label": "Arrival Date"
+  },
+  {
+   "fieldname": "arrival_time",
+   "fieldtype": "Data",
+   "label": "Arrival Time"
+  },
+  {
+   "fieldname": "cb32",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_return",
+   "fieldtype": "Check",
+   "label": "Is Return"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "return_section",
+   "fieldtype": "Section Break",
+   "label": "Return"
+  },
+  {
+   "fieldname": "rsector",
+   "fieldtype": "Data",
+   "label": "Sector"
+  },
+  {
+   "fieldname": "rflight_code",
+   "fieldtype": "Data",
+   "label": "Flight Code"
+  },
+  {
+   "fieldname": "column_break_31",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rdeparture",
+   "fieldtype": "Link",
+   "label": "Departure",
+   "options": "City"
+  },
+  {
+   "fieldname": "rarrival",
+   "fieldtype": "Link",
+   "label": "Arrival",
+   "options": "City"
+  },
+  {
+   "fieldname": "column_break_35",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rdeparture_class",
+   "fieldtype": "Link",
+   "label": "Departure Class",
+   "options": "Airline Class"
+  },
+  {
+   "fieldname": "rarrival_class",
+   "fieldtype": "Link",
+   "label": "Arrival Class",
+   "options": "Airline Class"
+  },
+  {
+   "fieldname": "column_break_38",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rdeparture_date",
+   "fieldtype": "Date",
+   "label": "Departure Date"
+  },
+  {
+   "fieldname": "rdeparture_time",
+   "fieldtype": "Data",
+   "label": "Departure Time"
+  },
+  {
+   "fieldname": "column_break_44",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rarrival_date",
+   "fieldtype": "Date",
+   "label": "Arrival Date"
+  },
+  {
+   "fieldname": "rarrival_time",
+   "fieldtype": "Data",
+   "label": "Arrival Time"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "connecting_section",
+   "fieldtype": "Section Break",
+   "label": "Connecting"
+  },
+  {
+   "fieldname": "csector",
+   "fieldtype": "Data",
+   "label": "Sector"
+  },
+  {
+   "fieldname": "cflight_code",
+   "fieldtype": "Data",
+   "label": "Flight Code"
+  },
+  {
+   "fieldname": "column_break_45",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cdeparture",
+   "fieldtype": "Link",
+   "label": "Departure",
+   "options": "City"
+  },
+  {
+   "fieldname": "carrival",
+   "fieldtype": "Link",
+   "label": "Arrival",
+   "options": "City"
+  },
+  {
+   "fieldname": "column_break_49",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cdeparture_class",
+   "fieldtype": "Link",
+   "label": "Departure Class",
+   "options": "Airline Class"
+  },
+  {
+   "fieldname": "carrival_class",
+   "fieldtype": "Link",
+   "label": "Arrival Class",
+   "options": "Airline Class"
+  },
+  {
+   "fieldname": "cb52",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cdeparture_date",
+   "fieldtype": "Date",
+   "label": "Departure Date"
+  },
+  {
+   "fieldname": "cdeparture_time",
+   "fieldtype": "Data",
+   "label": "Departure Time"
+  },
+  {
+   "fieldname": "column_break_59",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "carrival_date",
+   "fieldtype": "Date",
+   "label": "Arrival Date"
+  },
+  {
+   "fieldname": "carrival_time",
+   "fieldtype": "Data",
+   "label": "Arrival Time"
+  },
+  {
+   "fieldname": "cb64",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "cis_return",
+   "fieldtype": "Check",
+   "label": "Is Return"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "connecting_return_section",
+   "fieldtype": "Section Break",
+   "label": "Connecting Return"
+  },
+  {
+   "fieldname": "crsector",
+   "fieldtype": "Data",
+   "label": "Sector"
+  },
+  {
+   "fieldname": "crflight_code",
+   "fieldtype": "Data",
+   "label": "Flight Code"
+  },
+  {
+   "fieldname": "cb_59",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "crdeparture",
+   "fieldtype": "Link",
+   "label": "Departure",
+   "options": "City"
+  },
+  {
+   "fieldname": "crarrival",
+   "fieldtype": "Link",
+   "label": "Arrival",
+   "options": "City"
+  },
+  {
+   "fieldname": "column_break_63",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "crdeparture_class",
+   "fieldtype": "Link",
+   "label": "Departure Class",
+   "options": "Airline Class"
+  },
+  {
+   "fieldname": "crarrival_class",
+   "fieldtype": "Link",
+   "label": "Arrival Class",
+   "options": "Airline Class"
+  },
+  {
+   "fieldname": "column_break_66",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "crdeparture_date",
+   "fieldtype": "Date",
+   "label": "Departure Date"
+  },
+  {
+   "fieldname": "crdeparture_time",
+   "fieldtype": "Data",
+   "label": "Departure Time"
+  },
+  {
+   "fieldname": "column_break_74",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "crarrival_date",
+   "fieldtype": "Date",
+   "label": "Arrival Date"
+  },
+  {
+   "fieldname": "crarrival_time",
+   "fieldtype": "Data",
+   "label": "Arrival Time"
+  },
+  {
+   "fieldname": "section_break_26",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "market_fare",
+   "fieldtype": "Currency",
+   "label": "Market Fare"
+  },
+  {
+   "default": "0",
+   "fieldname": "apt",
+   "fieldtype": "Currency",
+   "label": "Airport Tax "
+  },
+  {
+   "default": "0",
+   "fieldname": "oas",
+   "fieldtype": "Currency",
+   "label": "RG"
+  },
+  {
+   "fieldname": "column_break_29",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "fed",
+   "fieldtype": "Currency",
+   "label": "FED"
+  },
+  {
+   "default": "0",
+   "fieldname": "ftt",
+   "fieldtype": "Currency",
+   "label": "FTT"
+  },
+  {
+   "default": "0",
+   "fieldname": "oad",
+   "fieldtype": "Currency",
+   "label": "Extra Tax"
+  },
+  {
+   "default": "0",
+   "fieldname": "column_break_32",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "svc_rate",
+   "fieldtype": "Percent",
+   "label": "SVC (%)"
+  },
+  {
+   "default": "0",
+   "fieldname": "svc_amount",
+   "fieldtype": "Currency",
+   "label": "SVC Amount"
+  },
+  {
+   "default": "0",
+   "fieldname": "dof",
+   "fieldtype": "Currency",
+   "label": "DoF"
+  },
+  {
+   "fieldname": "column_break_52",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "5",
+   "fieldname": "srb_rate",
+   "fieldtype": "Currency",
+   "label": "SRB (%)"
+  },
+  {
+   "default": "0",
+   "fieldname": "srb_amount",
+   "fieldtype": "Currency",
+   "label": "SRB Amount"
+  },
+  {
+   "default": "0",
+   "fieldname": "ins",
+   "fieldtype": "Currency",
+   "label": "INS"
+  },
+  {
+   "default": "0",
+   "fieldname": "ced",
+   "fieldtype": "Currency",
+   "label": "SP"
+  },
+  {
+   "fieldname": "column_break_55",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "ptt",
+   "fieldtype": "Currency",
+   "label": "PTT"
+  },
+  {
+   "default": "0",
+   "fieldname": "pq",
+   "fieldtype": "Currency",
+   "label": "PK"
+  },
+  {
+   "fieldname": "cb58",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "yq",
+   "fieldtype": "Currency",
+   "label": "YQ"
+  },
+  {
+   "default": "0",
+   "fieldname": "yr",
+   "fieldtype": "Currency",
+   "label": "YR"
+  },
+  {
+   "fieldname": "section_break_61",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "kbr",
+   "fieldtype": "Currency",
+   "label": "KB-R"
+  },
+  {
+   "default": "0",
+   "fieldname": "kbp",
+   "fieldtype": "Currency",
+   "label": "KB-P"
+  },
+  {
+   "fieldname": "column_break_64",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "com_rate",
+   "fieldtype": "Float",
+   "label": "Com Rate"
+  },
+  {
+   "default": "0",
+   "fieldname": "com_amount",
+   "fieldtype": "Currency",
+   "label": "Com Amount"
+  },
+  {
+   "fieldname": "column_break_67",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "wht_rate",
+   "fieldtype": "Float",
+   "label": "WHT Rate"
+  },
+  {
+   "default": "0",
+   "fieldname": "wht_amount",
+   "fieldtype": "Currency",
+   "label": "WHT Amount"
+  },
+  {
+   "default": "0",
+   "fieldname": "include_wht_in_price",
+   "fieldtype": "Check",
+   "label": "Include WHT in Price"
+  },
+  {
+   "fieldname": "column_break_70",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "sp_rate",
+   "fieldtype": "Currency",
+   "label": "SP Rate"
+  },
+  {
+   "default": "0",
+   "fieldname": "sp_amount",
+   "fieldtype": "Currency",
+   "label": "SP Amount"
+  },
+  {
+   "fieldname": "column_break_58",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "or_rate",
+   "fieldtype": "Float",
+   "label": "OR Rate"
+  },
+  {
+   "default": "0",
+   "fieldname": "or_amount",
+   "fieldtype": "Currency",
+   "label": "OR Amount"
+  },
+  {
+   "fieldname": "column_break_51",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "city_tax_rate",
+   "fieldtype": "Float",
+   "label": "City Tax Rate"
+  },
+  {
+   "default": "0",
+   "fieldname": "city_tax_amount",
+   "fieldtype": "Currency",
+   "label": "City Tax Amount"
+  },
+  {
+   "default": "0",
+   "fieldname": "discount_rate",
+   "fieldtype": "Float",
+   "label": "Discount Rate"
+  },
+  {
+   "default": "0",
+   "fieldname": "discount_amount",
+   "fieldtype": "Currency",
+   "label": "Discount Amount"
+  },
+  {
+   "depends_on": "eval:doc.returned",
+   "fieldname": "ticket_return_details_section",
+   "fieldtype": "Section Break",
+   "label": "Ticket Return Details"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "returned",
+   "fieldtype": "Check",
+   "label": "Returned",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb125",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "purchase_service_charges",
+   "fieldtype": "Currency",
+   "label": "Purchase Service Charges",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_125",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "sales_service_charges",
+   "fieldtype": "Currency",
+   "label": "Sales Service Charges",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tickets_cost_details_section",
+   "fieldtype": "Section Break",
+   "label": "Tickets Cost Details"
+  },
+  {
+   "default": "Adult",
+   "fieldname": "ticket_for",
+   "fieldtype": "Select",
+   "label": "Ticket for",
+   "options": "Adult\nChild\nInfant"
+  },
+  {
+   "fieldname": "column_break_54",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "ticket_cost",
+   "fieldtype": "Currency",
+   "label": "Ticket Cost",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_57",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "ticket_price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Ticket Price",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Ticket",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "bsp",
+   "fieldtype": "Check",
+   "label": "BSP"
+  },
+  {
+   "fieldname": "issuance_date",
+   "fieldtype": "Date",
+   "label": "Issuance Date"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-07-27 11:21:23.483110",
+ "modified_by": "Administrator",
+ "module": "Tour Management",
+ "name": "Ticket",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "search_fields": "ticket_no",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "pax_name",
+ "track_changes": 1
+}

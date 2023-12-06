@@ -1,0 +1,36 @@
+{
+ "add_total_row": 1,
+ "columns": [],
+ "creation": "2021-11-14 15:47:29.326058",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "mandatory": 1,
+   "options": "Customer",
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2021-11-14 16:08:37.286731",
+ "modified_by": "Administrator",
+ "module": "Travel",
+ "name": "Booking Details",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "select\n\nbooking_date as \"Date:Date:150\",\nname as \"Booking No:Data:150\",\npackage_title as \"Package Title:Data:150\",\npax_name as \"Head of Pax Name:Data:250\",\ntravel_date as \"Departure Date:Date:150\",\n\"\" as \"Remarks:Small Text:200\",\nconcat(qty_adult, \"+\", qty_child, \"+\", qty_infant) as \"No. of A+C+I:Data:150\",\ngross_sales_total as \"Net Amount:Currency:150\"\n\nfrom `tabTour Booking`\nwhere docstatus = 1\nand client_name = %(customer)s\n\norder by booking_date asc, name asc",
+ "ref_doctype": "Tour Booking",
+ "report_name": "Booking Details",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}

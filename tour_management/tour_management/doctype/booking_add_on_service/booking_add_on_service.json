@@ -1,0 +1,272 @@
+{
+ "actions": [],
+ "autoname": "TB-AOS-.MM.-.YY.-.####",
+ "creation": "2020-12-06 15:27:51.338731",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "service",
+  "service_name",
+  "vendor_ref",
+  "status",
+  "invoice_reference",
+  "column_break_4",
+  "date_and_time",
+  "currency_purchase",
+  "ex_p",
+  "column_break_9",
+  "label",
+  "currency_sales",
+  "ex_s",
+  "section_break_8",
+  "qty_adult",
+  "qty_child",
+  "qty_infant",
+  "foc",
+  "column_break_12",
+  "price_adult",
+  "price_child",
+  "price_infant",
+  "column_break_16",
+  "cost_adult",
+  "cost_child",
+  "cost_infant",
+  "purchase",
+  "purchase_pkr",
+  "column_break_22",
+  "total_adult",
+  "total_child",
+  "total_infant",
+  "sale",
+  "sale_pkr"
+ ],
+ "fields": [
+  {
+   "fieldname": "service",
+   "fieldtype": "Link",
+   "label": "Service",
+   "options": "Add On Service",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_and_time",
+   "fieldtype": "Datetime",
+   "label": "Date and Time"
+  },
+  {
+   "fieldname": "vendor_ref",
+   "fieldtype": "Link",
+   "label": "Vendor Ref",
+   "options": "Supplier",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Requested\nConfirmed"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "label",
+   "fieldtype": "Data",
+   "label": "Label"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "qty_adult",
+   "fieldtype": "Int",
+   "label": "Qty (Adult)"
+  },
+  {
+   "fieldname": "qty_child",
+   "fieldtype": "Int",
+   "label": "Qty (Child)"
+  },
+  {
+   "fieldname": "qty_infant",
+   "fieldtype": "Int",
+   "label": "Qty (Infant)"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "price_adult",
+   "fieldtype": "Currency",
+   "label": "Price (Adult)",
+   "options": "currency_sales"
+  },
+  {
+   "default": "0",
+   "fieldname": "price_child",
+   "fieldtype": "Currency",
+   "label": "Price (Child)",
+   "options": "currency_sales"
+  },
+  {
+   "default": "0",
+   "fieldname": "price_infant",
+   "fieldtype": "Currency",
+   "label": "Price (Infant)",
+   "options": "currency_sales"
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fetch_from": "service.rate_adult",
+   "fieldname": "cost_adult",
+   "fieldtype": "Currency",
+   "label": "Cost (Adult)",
+   "options": "currency_purchase"
+  },
+  {
+   "default": "0",
+   "fetch_from": "service.rate_child",
+   "fieldname": "cost_child",
+   "fieldtype": "Currency",
+   "label": "Cost (Child)",
+   "options": "currency_purchase"
+  },
+  {
+   "default": "0",
+   "fetch_from": "service.rate_infant",
+   "fieldname": "cost_infant",
+   "fieldtype": "Currency",
+   "label": "Cost (Infant)",
+   "options": "currency_purchase"
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_adult",
+   "fieldtype": "Currency",
+   "label": "Total (Adult)",
+   "options": "currency_sales",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_child",
+   "fieldtype": "Currency",
+   "label": "Total (Child)",
+   "options": "currency_sales",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_infant",
+   "fieldtype": "Currency",
+   "label": "Total (Infant)",
+   "options": "currency_sales",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "purchase_pkr",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Purchase (PKR)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "sale_pkr",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Sale (PKR)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "purchase",
+   "fieldtype": "Currency",
+   "label": "Total Purchase",
+   "options": "currency_purchase",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "sale",
+   "fieldtype": "Currency",
+   "label": "Total Sale",
+   "options": "currency_sales",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "foc",
+   "fieldtype": "Check",
+   "label": "FOC"
+  },
+  {
+   "fieldname": "invoice_reference",
+   "fieldtype": "Link",
+   "label": "Invoice Reference",
+   "options": "Purchase Invoice",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ex_s",
+   "fieldtype": "Float",
+   "label": "Exchange Rate (Sales)"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "service.currency",
+   "fieldname": "currency_purchase",
+   "fieldtype": "Link",
+   "label": "Currency (Purchase)",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "ex_p",
+   "fieldtype": "Float",
+   "label": "Exchange Rate (Purchase)"
+  },
+  {
+   "fieldname": "currency_sales",
+   "fieldtype": "Link",
+   "label": "Currency (Sales)",
+   "options": "Currency"
+  },
+  {
+   "fetch_from": "service.service_name",
+   "fieldname": "service_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Service Name",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2021-02-05 17:37:58.079055",
+ "modified_by": "Administrator",
+ "module": "Tour Management",
+ "name": "Booking Add On Service",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

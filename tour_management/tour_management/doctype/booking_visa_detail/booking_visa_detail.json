@@ -1,0 +1,63 @@
+{
+ "actions": [],
+ "creation": "2020-11-29 17:37:31.947673",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "visa_agent",
+  "agent_name",
+  "visa_type",
+  "visa_days",
+  "visa_rate"
+ ],
+ "fields": [
+  {
+   "fieldname": "visa_agent",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Visa Agent",
+   "options": "Visa Agent"
+  },
+  {
+   "fetch_from": "visa_agent.agent_name",
+   "fieldname": "agent_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Agent Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "visa_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Visa Type",
+   "options": "Visa Type"
+  },
+  {
+   "fieldname": "visa_days",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Visa Days"
+  },
+  {
+   "fieldname": "visa_rate",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Visa Rate",
+   "options": "currency"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2020-11-30 22:49:29.388088",
+ "modified_by": "Administrator",
+ "module": "Tour Management",
+ "name": "Booking Visa Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

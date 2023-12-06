@@ -1,0 +1,538 @@
+{
+ "actions": [],
+ "autoname": "TB-BH-.MM.-.YY.-.####",
+ "creation": "2020-12-03 18:50:35.796746",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "city",
+  "cb2",
+  "hotel",
+  "column_break_2",
+  "room_type",
+  "qty_room",
+  "column_break_4",
+  "hotel_agent",
+  "agent_name",
+  "section_break_10",
+  "invoice_reference",
+  "column_break_8",
+  "section_break_3",
+  "check_in",
+  "check_in_time",
+  "column_break_15",
+  "check_out",
+  "check_out_time",
+  "column_break_13",
+  "sr_no",
+  "date_limit",
+  "column_break_22",
+  "allotment_date",
+  "nights",
+  "column_break_24",
+  "hotel_reference_no",
+  "confirmation_no",
+  "column_break_27",
+  "remarks",
+  "status",
+  "section_break_13",
+  "qty_adult",
+  "column_break_16",
+  "qty_child",
+  "column_break_18",
+  "qty_infant",
+  "column_break_35",
+  "is_sharing",
+  "cb37",
+  "no_of_beds",
+  "vat",
+  "column_break_40",
+  "meal",
+  "no_of_days",
+  "section_break_17",
+  "currency_purchase",
+  "currency_sales",
+  "column_break_45",
+  "no_of_days_weekday",
+  "no_of_days_weekend",
+  "qty_extra_bed",
+  "column_break_20",
+  "cost_weekdays_room",
+  "cost_weekends_room",
+  "cost_extra_bed",
+  "sr_purchase",
+  "column_break_60",
+  "total_cost_weekdays_room",
+  "total_cost_weekends_room",
+  "total_cost_extra_bed",
+  "total_purchase",
+  "total_purchase_amount_pkr",
+  "column_break_30",
+  "rate_weekdays_room",
+  "rate_weekends_room",
+  "rate_extra_bed",
+  "sr_sales",
+  "column_break_23",
+  "price_weekdays_room",
+  "price_weekends_room",
+  "price_extra_bed",
+  "total_sales",
+  "total_sales_amount_pkr"
+ ],
+ "fields": [
+  {
+   "fieldname": "hotel",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Hotel",
+   "options": "Hotel",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "check_in",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Check In Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sr_no",
+   "fieldtype": "Data",
+   "label": "Sr. No"
+  },
+  {
+   "default": "Today",
+   "fieldname": "check_out",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Check Out Date",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "nights",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Nights",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Requested\nConfirmed\nAmended\nCancelled"
+  },
+  {
+   "fieldname": "hotel_reference_no",
+   "fieldtype": "Data",
+   "label": "Hotel Reference No"
+  },
+  {
+   "fieldname": "allotment_date",
+   "fieldtype": "Data",
+   "label": "Allotment No"
+  },
+  {
+   "fieldname": "date_limit",
+   "fieldtype": "Date",
+   "label": "Date Limit"
+  },
+  {
+   "fieldname": "section_break_13",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "qty_adult",
+   "fieldtype": "Int",
+   "label": "Qty (Adult)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "qty_child",
+   "fieldtype": "Int",
+   "label": "Qty (Child)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "qty_infant",
+   "fieldtype": "Int",
+   "label": "Qty (Infant)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_17",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "1",
+   "depends_on": "eval:doc.is_sharing == 0",
+   "fieldname": "qty_room",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "No of Rooms",
+   "mandatory_depends_on": "eval:doc.is_sharing == 0",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "qty_extra_bed",
+   "fieldtype": "Int",
+   "label": "Qty (Extra Bed)"
+  },
+  {
+   "fieldname": "column_break_20",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "price_extra_bed",
+   "fieldtype": "Currency",
+   "label": "Price (Extra Bed)",
+   "options": "currency_sales",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_23",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "cost_extra_bed",
+   "fieldtype": "Currency",
+   "label": "Cost (Extra Bed)",
+   "options": "currency_purchase"
+  },
+  {
+   "default": "0",
+   "fieldname": "sr_sales",
+   "fieldtype": "Float",
+   "label": "Exchange Rate (Sales)"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_sales",
+   "fieldtype": "Currency",
+   "label": "Total (Sales)",
+   "options": "currency_sales",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_purchase",
+   "fieldtype": "Currency",
+   "label": "Total (Purchase)",
+   "options": "currency_purchase",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_sales_amount_pkr",
+   "fieldtype": "Currency",
+   "label": "Total Sales Amount (PKR)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_purchase_amount_pkr",
+   "fieldtype": "Currency",
+   "label": "Total Purchase Amount (PKR)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "sr_purchase",
+   "fieldtype": "Float",
+   "label": "Exchange Rate (Purchase)"
+  },
+  {
+   "default": "0",
+   "fieldname": "rate_weekends_room",
+   "fieldtype": "Currency",
+   "label": "Rate Weekends (Room)",
+   "options": "currency_sales"
+  },
+  {
+   "default": "0",
+   "fieldname": "rate_extra_bed",
+   "fieldtype": "Currency",
+   "label": "Rate (Extra Bed)",
+   "options": "currency_sales"
+  },
+  {
+   "fieldname": "column_break_30",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "room_type",
+   "fieldtype": "Link",
+   "label": "Room Type",
+   "options": "Room Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "no_of_days_weekday",
+   "fieldtype": "Int",
+   "label": "No of Days (Weekday)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "no_of_days_weekend",
+   "fieldtype": "Int",
+   "label": "No of Days (Weekend)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "price_weekends_room",
+   "fieldtype": "Currency",
+   "label": "Price Weekends (Room)",
+   "options": "currency_sales",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "price_weekdays_room",
+   "fieldtype": "Currency",
+   "label": "Price Weekdays (Room)",
+   "options": "currency_sales",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "cost_weekdays_room",
+   "fieldtype": "Currency",
+   "label": "Cost Weekdays (Room)",
+   "options": "currency_purchase"
+  },
+  {
+   "default": "0",
+   "fieldname": "cost_weekends_room",
+   "fieldtype": "Currency",
+   "label": "Cost Weekends (Room)",
+   "options": "currency_purchase"
+  },
+  {
+   "default": "0",
+   "fieldname": "rate_weekdays_room",
+   "fieldtype": "Currency",
+   "label": "Rate Weekdays (Room)",
+   "options": "currency_sales"
+  },
+  {
+   "fieldname": "hotel_agent",
+   "fieldtype": "Link",
+   "label": "Hotel Agent",
+   "options": "Hotel Agent"
+  },
+  {
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "no_of_days",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "No of Days",
+   "read_only": 1
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Link",
+   "label": "City",
+   "options": "City",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "confirmation_no",
+   "fieldtype": "Data",
+   "label": "Confirmation No"
+  },
+  {
+   "default": "16:00:00",
+   "fieldname": "check_in_time",
+   "fieldtype": "Time",
+   "label": "Check In Time",
+   "reqd": 1
+  },
+  {
+   "default": "12:00:00",
+   "fieldname": "check_out_time",
+   "fieldtype": "Time",
+   "label": "Check Out Time",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_sharing",
+   "fieldtype": "Check",
+   "label": "Is Sharing"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_24",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_27",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_35",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cb37",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.is_sharing == 1",
+   "fieldname": "no_of_beds",
+   "fieldtype": "Int",
+   "label": "No of Beds",
+   "mandatory_depends_on": "eval:doc.is_sharing == 1",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_40",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Data",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "invoice_reference",
+   "fieldtype": "Link",
+   "label": "Invoice Reference",
+   "options": "Purchase Invoice",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.hotel_agent",
+   "fetch_from": "hotel_agent.agent_name",
+   "fieldname": "agent_name",
+   "fieldtype": "Data",
+   "label": "Agent Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "currency_purchase",
+   "fieldtype": "Link",
+   "label": "Currency (Purchase)",
+   "options": "Currency"
+  },
+  {
+   "fetch_from": "hotel.currency",
+   "fieldname": "currency_sales",
+   "fieldtype": "Link",
+   "label": "Currency (Sales)",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "meal",
+   "fieldtype": "Data",
+   "label": "Meal",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_60",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_cost_weekdays_room",
+   "fieldtype": "Currency",
+   "label": "Total Cost Weekdays (Room)",
+   "options": "currency_purchase",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_cost_weekends_room",
+   "fieldtype": "Currency",
+   "label": "Total Cost Weekends (Room)",
+   "options": "currency_purchase",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_cost_extra_bed",
+   "fieldtype": "Currency",
+   "label": "Total Cost (Extra Bed)",
+   "options": "currency_purchase",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_45",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vat",
+   "fieldtype": "Percent",
+   "label": "VAT (%)",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2021-02-07 20:30:33.885364",
+ "modified_by": "Administrator",
+ "module": "Tour Management",
+ "name": "Booking Hotel",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

@@ -1,0 +1,420 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "HB-TB-.YYYY.-.####",
+ "creation": "2023-12-06 22:50:13.202961",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "hajj_booking_info_section",
+  "booking_no",
+  "booking_date",
+  "column_break_kxokd",
+  "column_break_ujjvm",
+  "package_duration",
+  "days",
+  "column_break_dtlry",
+  "azizia_and_madina_package",
+  "client_detail_section",
+  "family_head_name",
+  "co",
+  "column_break_4gp3q",
+  "contact_no_ptcl",
+  "cell_no",
+  "whatsapp",
+  "column_break_8em4z",
+  "home_address",
+  "email",
+  "section_break_63nbu",
+  "section_break_c6mty",
+  "section_break_7zijt",
+  "no_of_passangers_section",
+  "adult",
+  "section_break_fmhjx",
+  "child_wo_bed",
+  "column_break_m20wu",
+  "infant",
+  "nominee_section",
+  "nominee",
+  "column_break_myka1",
+  "relation",
+  "column_break_jux01",
+  "nominee_cell_no",
+  "hotel_detail_section",
+  "hotels",
+  "azizia_room_detail",
+  "meal_plan_in_hajj_section",
+  "makah",
+  "column_break_xmxp8",
+  "madina",
+  "column_break_jvqwe",
+  "azizia",
+  "amended_from",
+  "package_price_section",
+  "adult_package_amount_sar",
+  "column_break_h43xv",
+  "child_package_amount_sar",
+  "column_break_hxsgk",
+  "child_without_bed_amount_sar",
+  "column_break_nl9tn",
+  "infant_package_sar",
+  "column_break_j4xfe",
+  "other_service_charges_sar",
+  "column_break_j0ndj",
+  "total_package_sar",
+  "column_break_bcl1d",
+  "exchange_rate",
+  "column_break_u5wps",
+  "total_amount_pkr",
+  "column_break_9vn0k",
+  "advance_pkr",
+  "column_break_ulpj6",
+  "discount_pkr",
+  "column_break_5eo4z",
+  "balance_pkr"
+ ],
+ "fields": [
+  {
+   "fieldname": "hajj_booking_info_section",
+   "fieldtype": "Section Break",
+   "label": "Hajj Booking Info"
+  },
+  {
+   "fieldname": "booking_no",
+   "fieldtype": "Data",
+   "label": "Booking No"
+  },
+  {
+   "fieldname": "booking_date",
+   "fieldtype": "Date",
+   "label": "Booking Date"
+  },
+  {
+   "fieldname": "column_break_kxokd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "package_duration",
+   "fieldtype": "Select",
+   "label": "Package Duration",
+   "options": "Short\nLong"
+  },
+  {
+   "fieldname": "days",
+   "fieldtype": "Int",
+   "label": "Days"
+  },
+  {
+   "fieldname": "column_break_dtlry",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "azizia_and_madina_package",
+   "fieldtype": "Check",
+   "label": "Azizia and Madina Package"
+  },
+  {
+   "fieldname": "client_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Client Detail"
+  },
+  {
+   "fieldname": "family_head_name",
+   "fieldtype": "Data",
+   "label": "Family Head Name"
+  },
+  {
+   "fieldname": "co",
+   "fieldtype": "Data",
+   "label": "C/O"
+  },
+  {
+   "fieldname": "column_break_4gp3q",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contact_no_ptcl",
+   "fieldtype": "Data",
+   "label": "Contact No PTCL"
+  },
+  {
+   "fieldname": "cell_no",
+   "fieldtype": "Data",
+   "label": "Cell No"
+  },
+  {
+   "fieldname": "whatsapp",
+   "fieldtype": "Data",
+   "label": "Whatsapp"
+  },
+  {
+   "fieldname": "column_break_8em4z",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "home_address",
+   "fieldtype": "Data",
+   "label": "Home Address"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "section_break_63nbu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_c6mty",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_7zijt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "no_of_passangers_section",
+   "fieldtype": "Section Break",
+   "label": "No of Passangers"
+  },
+  {
+   "fieldname": "adult",
+   "fieldtype": "Int",
+   "label": "Adult"
+  },
+  {
+   "fieldname": "section_break_fmhjx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "child_wo_bed",
+   "fieldtype": "Int",
+   "label": "Child W/o Bed"
+  },
+  {
+   "fieldname": "column_break_m20wu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "infant",
+   "fieldtype": "Int",
+   "label": "Infant"
+  },
+  {
+   "fieldname": "nominee_section",
+   "fieldtype": "Section Break",
+   "label": "Nominee"
+  },
+  {
+   "fieldname": "nominee",
+   "fieldtype": "Data",
+   "label": "Nominee"
+  },
+  {
+   "fieldname": "column_break_myka1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "relation",
+   "fieldtype": "Select",
+   "label": "Relation",
+   "options": "Father\nSon\nBrother"
+  },
+  {
+   "fieldname": "column_break_jux01",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "nominee_cell_no",
+   "fieldtype": "Data",
+   "label": "Nominee Cell no"
+  },
+  {
+   "fieldname": "hotel_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Hotel Detail"
+  },
+  {
+   "fieldname": "hotels",
+   "fieldtype": "Table",
+   "label": "Hotels",
+   "options": "Booking Hotel"
+  },
+  {
+   "fieldname": "azizia_room_detail",
+   "fieldtype": "Data",
+   "label": "Azizia Room Detail"
+  },
+  {
+   "fieldname": "meal_plan_in_hajj_section",
+   "fieldtype": "Section Break",
+   "label": "Meal Plan in Hajj"
+  },
+  {
+   "fieldname": "makah",
+   "fieldtype": "Data",
+   "label": "Makah"
+  },
+  {
+   "fieldname": "column_break_xmxp8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "madina",
+   "fieldtype": "Data",
+   "label": "Madina"
+  },
+  {
+   "fieldname": "column_break_jvqwe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "azizia",
+   "fieldtype": "Data",
+   "label": "Azizia"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Hajj Booking",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "package_price_section",
+   "fieldtype": "Section Break",
+   "label": "Package Price "
+  },
+  {
+   "fieldname": "adult_package_amount_sar",
+   "fieldtype": "Data",
+   "label": "Adult Package Amount SAR"
+  },
+  {
+   "fieldname": "child_package_amount_sar",
+   "fieldtype": "Data",
+   "label": "Child Package Amount SAR"
+  },
+  {
+   "fieldname": "child_without_bed_amount_sar",
+   "fieldtype": "Data",
+   "label": "Child without Bed Amount SAR"
+  },
+  {
+   "fieldname": "infant_package_sar",
+   "fieldtype": "Data",
+   "label": "Infant Package SAR"
+  },
+  {
+   "fieldname": "other_service_charges_sar",
+   "fieldtype": "Data",
+   "label": "Other Service Charges SAR"
+  },
+  {
+   "fieldname": "total_package_sar",
+   "fieldtype": "Data",
+   "label": "Total Package SAR"
+  },
+  {
+   "fieldname": "exchange_rate",
+   "fieldtype": "Data",
+   "label": "Exchange Rate"
+  },
+  {
+   "fieldname": "total_amount_pkr",
+   "fieldtype": "Data",
+   "label": "Total Amount PKR"
+  },
+  {
+   "fieldname": "advance_pkr",
+   "fieldtype": "Data",
+   "label": "Advance PKR"
+  },
+  {
+   "fieldname": "discount_pkr",
+   "fieldtype": "Data",
+   "label": "Discount PKR"
+  },
+  {
+   "fieldname": "balance_pkr",
+   "fieldtype": "Data",
+   "label": "Balance PKR"
+  },
+  {
+   "fieldname": "column_break_ujjvm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_bcl1d",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_u5wps",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_9vn0k",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ulpj6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_5eo4z",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_h43xv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_hxsgk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_nl9tn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_j4xfe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_j0ndj",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-12-06 23:17:22.421224",
+ "modified_by": "Administrator",
+ "module": "Tour Management",
+ "name": "Hajj Booking",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

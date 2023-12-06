@@ -1,0 +1,78 @@
+{
+ "actions": [],
+ "creation": "2021-01-23 09:37:53.286900",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "flight_code",
+  "flight_name",
+  "column_break_3",
+  "sorce",
+  "destination",
+  "column_break_6",
+  "route",
+  "fare"
+ ],
+ "fields": [
+  {
+   "fieldname": "flight_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Flight Code",
+   "options": "Flight"
+  },
+  {
+   "fieldname": "flight_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Flight Name"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sorce",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Sorce",
+   "options": "City"
+  },
+  {
+   "fieldname": "destination",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Destination",
+   "options": "City"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
+  },
+  {
+   "fieldname": "fare",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Fare"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2021-01-23 18:41:37.031209",
+ "modified_by": "Administrator",
+ "module": "Travel",
+ "name": "Airline Flight",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

@@ -1,0 +1,219 @@
+<style type="text/css">
+	.font-weight-600 {
+    	font-weight: 600!important;
+    	color: #0c2f54;
+    	font-size: 16px;
+	}
+</style>
+
+<table width="100%" class="table-bordered" >
+  
+    <tr style="border-bottom: 2px solid black" width="100%">
+		<th>Sr.</th>
+      <th>Source</th>
+		<th>One Way</th>
+		<th>Seats Available</th>
+		<th align="center">Itineraries</th>
+		<th>Pricing</th>
+    </tr>
+	{%for d in data%}
+  <tr style="border-bottom: 2px solid black" width="100%">
+	   <td>{{d["id"]}}</td>
+      <td>{{d["source"]}}</td>
+		<td>{{d["oneWay"]}}</td>
+		<td>{{d["numberOfBookableSeats"]}}</td>
+		<td>
+			<table class="table-bordered" width="100%" border="1">
+		 	
+		    <tr>
+		      <th align="center">Duration</th>
+		      <th align="center">Segments</th>
+	        </tr>
+	        {% for i in d.itineraries%}
+		    <tr>
+		    	<td>{{i.duration}}</td>
+		    	<td>
+					{%for s in i.segments%}<br>
+					<table width="100%" border="1">
+					  <tbody>
+					    <tr>
+					      <td><strong>Carrier</strong></td>
+					      <td><strong>Number</strong></td>
+					      <td><strong>Aircraft Code</strong></td>
+				        </tr>
+					    <tr>
+					      <td>{{s.carrierCode}}</td>
+					      <td>{{s.number}}</td>
+					      <td>{{s.aircraft.code}}</td>
+				        </tr>
+				      </tbody>
+				  </table>
+<table width="100%"  border="1" >
+	    	  <tbody>
+		    	    <tr>
+		    	      <td>&nbsp;</td>
+		    	      <th>Departure</th>
+		    	      <th>Arrival</th>
+	    	        </tr>
+		    	    <tr>
+		    	      <th>IATA</th>
+		    	      <td>{{s.departure.iataCode}}</td>
+		    	      <td>{{s.arrival.iataCode}}</td>
+	    	        </tr>
+		    	    <tr>
+		    	      <th>At</th>
+		    	      <td>{{s.departure.at}}</td>
+		    	      <td>{{s.arrival.at}}</td>
+	    	        </tr>
+    	      </tbody>
+	    	    </table>
+					{%endfor%}
+				</td>
+		    </tr>
+			  {%endfor%}
+	     
+	    </table></td>
+		<td><table width="100%" border="1">
+		  <tbody>
+		    <tr>
+		      <td><strong>Currency</strong></td>
+		      <td><strong>Base</strong></td>
+		      <td><strong>Total</strong></td>
+	        </tr>
+		    <tr>
+		      <td>{{d.price.currency}}</td>
+		      <td>{{d.price.base}}</td>
+		      <td>{{d.price.total}}</td>
+	        </tr>
+	      </tbody>
+	    </table>
+		  <table width="100%" border="1">
+	        
+	          <tr>
+	            <td><strong>Type</strong></td>
+	            <td><strong>Amount</strong></td>
+            </tr>
+				{%for f in d.price.fees%}
+	          <tr>
+	            <td>{{f.type}}</td>
+	            <td>{{f.amount}}</td>
+              </tr>
+				{%endfor%}
+            
+          </table>
+        <p>&nbsp;</p></td>
+		
+		 </tr>
+	{%endfor%}
+</table>
+<br>
+
+		{%for d in data%}
+	 {% for i in d.itineraries%}
+	<div class="row flex-row no-gutters border bg-light rounded shadow">
+		<div class="col-sm-9 col-md-10 col-12 border-right">
+			<div class="row no-gutters px-2 py-1 card-header">
+				<div class="col-12 col-sm-8">
+					<h6 class="font-weight-600 pt-1 pb-0 text-2">{{i.segments[0].carrierCode}}<!----></h6>
+				</div> 
+				<div class="col-12 col-sm-4 text-right"><span class="text-success badge badge-light-success py-2 px-2"></span>
+				</div>
+			</div> 
+			<div class="row no-gutters px-2 py-2 ">
+				<div class="col-2 col-sm-2 text-center">
+					<img alt={{i.segments[0].carrierCode}} title={{i.segments[0].carrierCode}} src="" class="img-fluid airline-logo">
+				</div> 
+				<div class="col-2 col-sm-2 text-center align-self-center">
+					<span title="Fri, 18-Jun-2021 10:50 AM" class="d-block font-weight-600 text-3">10:50 AM</span> 
+					<small class="d-block text-muted">{{i.segments[0].departure.iataCode}}</small>
+				</div> 
+				<div class="col-6 col-sm-6 text-center align-self-center">
+					{%if i.segments.length == 1%}
+					<!-- NonStop  -->	
+
+					<div class="upper-content no-gutters align-self-center d-flex justify-content-center mb-1"></div> 
+					<div class="middle-content align-self-center d-flex justify-content-center"></div> 
+					<div class="lower-content no-gutters align-self-center d-flex justify-content-center mt-1"></div> 
+					<div class="col-12 text-1 text-primary">Non-Stop</div>
+					<!-- NonStop  -->	
+					{%endif%}
+
+					<!-- Multistops  -->	
+					{%if i.segments.length > 1%}
+					<div class="upper-content no-gutters align-self-center d-flex justify-content-center mb-1">
+						<div title="Sat, 19-Jun-2021 08:00 AM" class="col-4 text-muted text-1">20H 30M
+						</div>
+						<div title="Sat, 19-Jun-2021 11:55 PM" class="col-4 text-muted text-1">9H 20M</div>
+					</div> 
+					<div class="middle-content align-self-center d-flex justify-content-center">
+						<div class="col-4"></div>
+						<div class="col-4"></div>
+					</div> 
+					<div class="lower-content no-gutters align-self-center d-flex justify-content-center mt-1">
+						<div class="col-4 text-muted text-1">DOH</div>
+						<div class="col-4 text-muted text-1">MAD</div>
+					</div> 
+					<div class="col-12 text-1 text-primary">2 Stops</div>
+				
+					<!-- Multistops  -->
+					{%endif%}
+					</div> 
+					
+				<div class="col-2 col-sm-2 text-center align-self-center">
+					<span title="Sun, 20-Jun-2021 07:40 AM" class="d-block font-weight-600 text-3">07:40 AM</span> 
+					<small class="d-block text-muted">{{i.segments[i.segments.length-1].arrival.iataCode}}</small>
+				</div>
+			</div> <!---->
+		
+			<!-- RETURN  -->
+			{%if i.oneWay == "true"%}
+		<div class="border-top row no-gutters px-2 py-2 ">
+			<div class="col-2 col-sm-2 text-center">
+					<img alt="Qatar Airways" title="Qatar Airways" src="" class="img-fluid airline-logo">
+				</div> 
+				<div class="col-2 col-sm-2 text-center align-self-center">
+					<span title="Fri, 18-Jun-2021 10:50 AM" class="d-block font-weight-600 text-3">10:50 AM</span> 
+					<small class="d-block text-muted">KHI</small>
+				</div> 
+				<div class="col-6 col-sm-6 text-center align-self-center">
+					<div class="upper-content no-gutters align-self-center d-flex justify-content-center mb-1">
+						<div title="Sat, 19-Jun-2021 08:00 AM" class="col-4 text-muted text-1">20H 30M
+						</div>
+						<div title="Sat, 19-Jun-2021 11:55 PM" class="col-4 text-muted tests text-1">9H 20M</div>
+					</div> 
+					<div class="middle-content align-self-center d-flex justify-content-center">
+						<div class="col-4"></div>
+						<div class="col-4"></div>
+					</div> 
+					<div class="lower-content no-gutters align-self-center d-flex justify-content-center mt-1">
+						<div class="col-4 text-muted text-1">DOH</div>
+						<div class="col-4 text-muted text-1">MAD</div>
+					</div> <div class="col-12 text-1 text-primary">2 Stops</div>
+				</div> 
+				<div class="col-2 col-sm-2 text-center align-self-center">
+					<span title="Sun, 20-Jun-2021 07:40 AM" class="d-block font-weight-600 text-3">07:40 AM</span> 
+					<small class="d-block text-muted">SCL</small>
+				</div>
+			</div>
+			<!-- RETURN  -->
+		{%endif%}
+		</div>
+		<div class="col-sm-3 col-md-2 px-3 py-3 col-12 text-center align-self-center">
+			<form action="/#">
+				<input type="hidden" name="_token" value="AsWbHDME9r4S52L4ATB2wqh8KHLScrr5KLLd4u2K"> 
+				<input type="hidden" name="trip_type" value="one_way"> 
+				<input type="hidden" name="no_of_adults" value="1"> 
+				<input type="hidden" name="no_of_children" value="0"> 
+				<input type="hidden" name="no_of_infants" value="0"> 
+				<input type="hidden" name="ref_id" value="6e897e26b8b487c1561ad3cd73a932ad"> 
+				<input type="hidden" name="journey_ref_id" value="f106e08f2d8f06bc9d5de666e346de7d"> <!----> 
+				<span class="d-block text-dark font-weight-600 text-4 py-1">Rs {{d.price.total}}</span> 
+				
+				
+			</form>
+			<button class="btn btn-primary form-control " data-fieldname="books" id="submit-button">BOOK</button>
+			<span class="d-block text-danger mt-2">1 Passenger(s)</span>
+		</div>
+	</div>
+ 	{%endfor%}
+ 	{%endfor%}

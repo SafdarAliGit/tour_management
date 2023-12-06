@@ -1,0 +1,19 @@
+{
+ "content": null,
+ "creation": "2021-11-13 20:13:02.043927",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2021-11-13 20:13:02.043927",
+ "modified_by": "Administrator",
+ "module": "Tour Management",
+ "name": "account-statement",
+ "owner": "Administrator",
+ "page_name": "Account Statement",
+ "roles": [],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "Account Statement (Ticket Wise)"
+}

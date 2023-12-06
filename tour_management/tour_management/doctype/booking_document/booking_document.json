@@ -1,0 +1,79 @@
+{
+ "actions": [],
+ "creation": "2021-01-03 22:14:57.520509",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "document_name",
+  "description",
+  "section_break_4",
+  "required",
+  "column_break_5",
+  "received",
+  "column_break_7",
+  "remaining"
+ ],
+ "fields": [
+  {
+   "fieldname": "document_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Document Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "Description",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "required",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Required",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "received",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Received"
+  },
+  {
+   "fieldname": "remaining",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Remaining",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2021-01-16 21:59:34.186841",
+ "modified_by": "Administrator",
+ "module": "Tour Management",
+ "name": "Booking Document",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

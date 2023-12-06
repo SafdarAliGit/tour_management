@@ -1,0 +1,181 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "HM-HA-.####",
+ "creation": "2020-12-18 23:50:16.280530",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "agent_name",
+  "supplier",
+  "company",
+  "column_break_3",
+  "company_logo",
+  "shirka",
+  "contact_details_section",
+  "address_1",
+  "address_2",
+  "address_3",
+  "contact_number_1",
+  "contact_number_2",
+  "tel",
+  "fax",
+  "column_break_9",
+  "whatsapp",
+  "email_address",
+  "section_break_12",
+  "remarks",
+  "purchasing_price_list_section",
+  "currency",
+  "costs"
+ ],
+ "fields": [
+  {
+   "fieldname": "agent_name",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Agent Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Company"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company_logo",
+   "fieldtype": "Attach Image",
+   "label": "Company logo"
+  },
+  {
+   "fieldname": "shirka",
+   "fieldtype": "Data",
+   "label": "Shirka"
+  },
+  {
+   "fieldname": "contact_details_section",
+   "fieldtype": "Section Break",
+   "label": "Contact Details"
+  },
+  {
+   "fieldname": "address_1",
+   "fieldtype": "Data",
+   "label": "Address 1"
+  },
+  {
+   "fieldname": "address_2",
+   "fieldtype": "Data",
+   "label": "Address 2"
+  },
+  {
+   "fieldname": "address_3",
+   "fieldtype": "Data",
+   "label": "Address 3"
+  },
+  {
+   "fieldname": "contact_number_1",
+   "fieldtype": "Data",
+   "label": "Contact Number 1"
+  },
+  {
+   "fieldname": "contact_number_2",
+   "fieldtype": "Data",
+   "label": "Contact Number 2"
+  },
+  {
+   "fieldname": "tel",
+   "fieldtype": "Data",
+   "label": "Tel"
+  },
+  {
+   "fieldname": "fax",
+   "fieldtype": "Data",
+   "label": "Fax"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "whatsapp",
+   "fieldtype": "Data",
+   "label": "WhatsApp"
+  },
+  {
+   "fieldname": "email_address",
+   "fieldtype": "Data",
+   "label": "Email Address"
+  },
+  {
+   "fieldname": "section_break_12",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "purchasing_price_list_section",
+   "fieldtype": "Section Break",
+   "label": "Purchasing Price List"
+  },
+  {
+   "fieldname": "costs",
+   "fieldtype": "Table",
+   "label": "Costs",
+   "options": "Hotel Agent Purchasing Price List"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Currency",
+   "options": "Currency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2021-02-07 18:14:48.478949",
+ "modified_by": "Administrator",
+ "module": "Hotel Management",
+ "name": "Hotel Agent",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "search_fields": "agent_name",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "agent_name",
+ "track_changes": 1
+}

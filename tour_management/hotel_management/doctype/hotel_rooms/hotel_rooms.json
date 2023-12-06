@@ -1,0 +1,112 @@
+{
+ "actions": [],
+ "autoname": "field:room_no",
+ "creation": "2020-11-29 16:00:04.289868",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "room_no",
+  "hotel",
+  "column_break_3",
+  "room_type",
+  "rent_section",
+  "rent_weekdays",
+  "per_bed_sharing",
+  "column_break_6",
+  "rent_weekend",
+  "extra_bed_charges",
+  "section_break_8",
+  "amenities"
+ ],
+ "fields": [
+  {
+   "fieldname": "room_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Room No",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "room_type",
+   "fieldtype": "Link",
+   "label": "Room Type",
+   "options": "Hotel Room Types"
+  },
+  {
+   "fieldname": "rent_section",
+   "fieldtype": "Section Break",
+   "label": "Rent"
+  },
+  {
+   "fieldname": "per_bed_sharing",
+   "fieldtype": "Currency",
+   "label": "Per Bed (Sharing)"
+  },
+  {
+   "fieldname": "rent_weekdays",
+   "fieldtype": "Data",
+   "label": "Rent (Weekdays)"
+  },
+  {
+   "fieldname": "rent_weekend",
+   "fieldtype": "Data",
+   "label": "Rent (Weekend)"
+  },
+  {
+   "fieldname": "extra_bed_charges",
+   "fieldtype": "Data",
+   "label": "Extra Bed Charges"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break",
+   "label": "Supplement Add-Ons"
+  },
+  {
+   "fieldname": "amenities",
+   "fieldtype": "Table",
+   "label": "Amenities  (Add-Ons)",
+   "options": "Room Amenities"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "hotel",
+   "fieldtype": "Link",
+   "label": "Hotel",
+   "options": "Hotel",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "links": [],
+ "modified": "2020-12-05 20:54:30.532326",
+ "modified_by": "Administrator",
+ "module": "Hotel Management",
+ "name": "Hotel Rooms",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

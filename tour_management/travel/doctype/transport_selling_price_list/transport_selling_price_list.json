@@ -1,0 +1,62 @@
+{
+ "actions": [],
+ "autoname": "T-TSPL-.####",
+ "creation": "2020-12-19 23:05:56.044709",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "transport",
+  "currency",
+  "section_break_7",
+  "price_list"
+ ],
+ "fields": [
+  {
+   "fieldname": "transport",
+   "fieldtype": "Link",
+   "label": "Transport",
+   "options": "Transport"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Currency",
+   "label": "Currency"
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "price_list",
+   "fieldtype": "Table",
+   "label": "Price List",
+   "options": "Transport Price List"
+  }
+ ],
+ "links": [],
+ "modified": "2020-12-19 23:05:56.044709",
+ "modified_by": "Administrator",
+ "module": "Travel",
+ "name": "Transport Selling Price List",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "transport",
+ "track_changes": 1
+}

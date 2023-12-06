@@ -1,0 +1,267 @@
+{
+ "actions": [],
+ "autoname": "TP-PTP-.MM.-.YY.-.####",
+ "creation": "2021-01-30 21:28:51.660671",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "transporter",
+  "transporter_name",
+  "column_break_2",
+  "route",
+  "route_name",
+  "column_break_4",
+  "vehicle",
+  "section_break_2",
+  "reference_no",
+  "contact_info",
+  "column_break_9",
+  "price_based_on",
+  "ex_v",
+  "capacity",
+  "cost_per_seat",
+  "cost_per_day",
+  "cost_vehicle",
+  "purchase",
+  "purchase_pkr",
+  "column_break_16",
+  "currency",
+  "ex_c",
+  "qty",
+  "price_per_seat",
+  "price_per_day",
+  "price_vehicle",
+  "sale",
+  "sale_pkr",
+  "section_break_22",
+  "qty_adult",
+  "column_break_24",
+  "qty_child",
+  "column_break_26",
+  "qty_infant"
+ ],
+ "fields": [
+  {
+   "fieldname": "transporter",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Transporter",
+   "options": "Transporter",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "transporter.transporter_name",
+   "fieldname": "transporter_name",
+   "fieldtype": "Data",
+   "label": "Transporter Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Link",
+   "label": "Route",
+   "options": "Transport Route"
+  },
+  {
+   "fetch_from": "route.route",
+   "fieldname": "route_name",
+   "fieldtype": "Data",
+   "label": "Route Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "label": "Vehicle",
+   "options": "Transport Vehicle",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "reference_no",
+   "fieldtype": "Data",
+   "label": "Reference No"
+  },
+  {
+   "fieldname": "contact_info",
+   "fieldtype": "Small Text",
+   "label": "Contact Info"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Per Seat",
+   "fieldname": "price_based_on",
+   "fieldtype": "Select",
+   "label": "Price Based On",
+   "options": "Per Seat\nPer Day\nVehicle"
+  },
+  {
+   "fieldname": "ex_v",
+   "fieldtype": "Float",
+   "label": "Exchange Rate (Purchase)"
+  },
+  {
+   "default": "0",
+   "fetch_from": "vehicle.vehicle_capacity",
+   "fieldname": "capacity",
+   "fieldtype": "Int",
+   "label": "Capacity",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "cost_per_seat",
+   "fieldtype": "Currency",
+   "label": "Cost per Seat",
+   "options": "currency"
+  },
+  {
+   "default": "0",
+   "fieldname": "cost_per_day",
+   "fieldtype": "Data",
+   "label": "Cost Per Day"
+  },
+  {
+   "default": "0",
+   "fieldname": "cost_vehicle",
+   "fieldtype": "Currency",
+   "label": "Cost Vehicle"
+  },
+  {
+   "default": "0",
+   "fieldname": "purchase",
+   "fieldtype": "Currency",
+   "label": "Purchase",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "purchase_pkr",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Purchase (PKR)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "transporter.currency",
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "default": "0",
+   "fieldname": "ex_c",
+   "fieldtype": "Float",
+   "label": "Exchange Rate (Sales)"
+  },
+  {
+   "default": "1",
+   "fieldname": "qty",
+   "fieldtype": "Int",
+   "label": "Qty in (per Seat/ per Day)",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "price_per_seat",
+   "fieldtype": "Currency",
+   "label": "Price per Seat",
+   "options": "currency"
+  },
+  {
+   "default": "0",
+   "fieldname": "price_per_day",
+   "fieldtype": "Currency",
+   "label": "Price Per Day"
+  },
+  {
+   "default": "0",
+   "fieldname": "price_vehicle",
+   "fieldtype": "Currency",
+   "label": "Price Vehicle",
+   "options": "currency"
+  },
+  {
+   "default": "0",
+   "fieldname": "sale",
+   "fieldtype": "Currency",
+   "label": "Sale",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "sale_pkr",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Sales (PKR)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_22",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "qty_adult",
+   "fieldtype": "Int",
+   "label": "Qty (Adult)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_24",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "qty_child",
+   "fieldtype": "Int",
+   "label": "Qty (Child)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_26",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "qty_infant",
+   "fieldtype": "Int",
+   "label": "Qty (Infant)",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2021-08-27 15:21:41.341021",
+ "modified_by": "Administrator",
+ "module": "Tour Management",
+ "name": "Package Transport",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

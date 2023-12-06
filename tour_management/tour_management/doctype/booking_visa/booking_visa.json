@@ -1,0 +1,308 @@
+{
+ "actions": [],
+ "creation": "2021-02-05 15:30:38.045875",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "destination_country",
+  "visa_type",
+  "visa_days",
+  "visa_invoice_reference",
+  "column_break_4",
+  "visa_agent",
+  "agent_reference_no",
+  "agent_name",
+  "column_break_8",
+  "visa_status",
+  "visa_agent_price_list",
+  "visa_selling_price_list",
+  "section_break_24",
+  "visa_qty_adult",
+  "visa_qty_child",
+  "visa_qty_infant",
+  "column_break_16",
+  "price_adult",
+  "price_child",
+  "price_infant",
+  "column_break_20",
+  "cost_adult",
+  "cost_child",
+  "cost_infant",
+  "column_break_24",
+  "visa_total_adult",
+  "visa_total_child",
+  "visa_total_infant",
+  "column_break_28",
+  "visa_currency_purchase",
+  "total_visa_cost",
+  "visa_exr_purchase",
+  "total_visa_cost_pkr",
+  "column_break_71",
+  "visa_currency_sales",
+  "total_visa_amount",
+  "visa_exr_sales",
+  "total_visa_amount_pkr"
+ ],
+ "fields": [
+  {
+   "fieldname": "visa_type",
+   "fieldtype": "Link",
+   "label": "Visa Type",
+   "options": "Visa Type",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fetch_from": "visa_selling_price_list.visa_validity_days",
+   "fieldname": "visa_days",
+   "fieldtype": "Int",
+   "label": "Visa Days",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "visa_invoice_reference",
+   "fieldtype": "Link",
+   "label": "Visa Invoice Reference",
+   "options": "Purchase Invoice"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "visa_agent",
+   "fieldtype": "Link",
+   "label": "Visa Agent",
+   "options": "Visa Agent",
+   "reqd": 1
+  },
+  {
+   "fieldname": "agent_reference_no",
+   "fieldtype": "Data",
+   "label": "Agent Reference No"
+  },
+  {
+   "depends_on": "eval:doc.visa_agent",
+   "fetch_from": "visa_agent.agent_name",
+   "fieldname": "agent_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Agent Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "visa_status",
+   "fieldtype": "Select",
+   "label": "Visa Status",
+   "options": "Requested\nApproved\nCancelled"
+  },
+  {
+   "fieldname": "visa_agent_price_list",
+   "fieldtype": "Link",
+   "label": "Visa Agent Price List",
+   "options": "Visa Agent Price List"
+  },
+  {
+   "fieldname": "visa_selling_price_list",
+   "fieldtype": "Link",
+   "label": "Visa Selling Price List",
+   "options": "Visa Selling Price List"
+  },
+  {
+   "fieldname": "section_break_24",
+   "fieldtype": "Section Break",
+   "label": "Visa Costing"
+  },
+  {
+   "default": "0",
+   "fieldname": "visa_qty_adult",
+   "fieldtype": "Int",
+   "label": "Visa Qty (Adult)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "visa_qty_child",
+   "fieldtype": "Int",
+   "label": "Visa Qty (Child)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "visa_qty_infant",
+   "fieldtype": "Int",
+   "label": "Visa Qty (Infant)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "price_adult",
+   "fieldtype": "Currency",
+   "label": "Price (Adult)",
+   "options": "visa_currency_sales"
+  },
+  {
+   "default": "0",
+   "fieldname": "price_child",
+   "fieldtype": "Currency",
+   "label": "Price (Child)",
+   "options": "visa_currency_sales"
+  },
+  {
+   "default": "0",
+   "fieldname": "price_infant",
+   "fieldtype": "Currency",
+   "label": "Price (Infant)",
+   "options": "visa_currency_sales"
+  },
+  {
+   "fieldname": "column_break_20",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "cost_adult",
+   "fieldtype": "Currency",
+   "label": "Cost (Adult)",
+   "options": "visa_currency_purchase"
+  },
+  {
+   "default": "0",
+   "fieldname": "cost_child",
+   "fieldtype": "Currency",
+   "label": "Cost (Child)",
+   "options": "visa_currency_purchase"
+  },
+  {
+   "default": "0",
+   "fieldname": "cost_infant",
+   "fieldtype": "Currency",
+   "label": "Cost (Infant)",
+   "options": "visa_currency_purchase"
+  },
+  {
+   "fieldname": "column_break_24",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "visa_total_adult",
+   "fieldtype": "Currency",
+   "label": "Visa Total (Adult)",
+   "options": "visa_currency_sales",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "visa_total_child",
+   "fieldtype": "Currency",
+   "label": "Visa Total (Child)",
+   "options": "visa_currency_sales",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "visa_total_infant",
+   "fieldtype": "Currency",
+   "label": "Visa Total (Infant)",
+   "options": "visa_currency_sales",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_28",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "visa_agent_price_list.currency",
+   "fieldname": "visa_currency_purchase",
+   "fieldtype": "Link",
+   "label": "Currency (Purchase)",
+   "options": "Currency"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_visa_cost",
+   "fieldtype": "Currency",
+   "label": "Total Visa Cost",
+   "options": "visa_currency_purchase",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "visa_exr_purchase",
+   "fieldtype": "Float",
+   "label": "Visa EXR (Purchase)"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_visa_cost_pkr",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Visa Cost (PKR)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_71",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "visa_selling_price_list.currency",
+   "fieldname": "visa_currency_sales",
+   "fieldtype": "Link",
+   "label": "Currency (Sales)",
+   "options": "Currency"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_visa_amount",
+   "fieldtype": "Currency",
+   "label": "Total Visa Amount",
+   "options": "visa_currency_sales",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "visa_exr_sales",
+   "fieldtype": "Float",
+   "label": "Visa EXR (Sales)"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_visa_amount_pkr",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Visa Amount (PKR)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "destination_country",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Destination Country ",
+   "options": "Country",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2021-05-04 15:22:30.107113",
+ "modified_by": "Administrator",
+ "module": "Tour Management",
+ "name": "Booking Visa",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

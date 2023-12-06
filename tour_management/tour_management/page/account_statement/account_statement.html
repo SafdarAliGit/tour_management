@@ -1,0 +1,50 @@
+
+<table width="100%" border="1">
+  <tbody>
+    <tr  align="center">
+      <td colspan="11"><strong>Invoices</strong></td>
+      
+    </tr>
+    <tr align="center">
+      <td><strong>Date</strong></td>
+      <td><strong>XO Number</strong></td>
+      <td><strong>Invoice Number</strong></td>
+      <td><strong>Name of Passenger</strong></td>
+      <td><strong>Ticket Number</strong></td>
+      <td><strong>Sector</strong></td>
+      <td><strong>Fare</strong></td>
+      <td><strong>Taxes</strong></td>
+      <td><strong>SP</strong></td>
+      <td><strong>KB</strong></td>
+      <td><strong>Net Amount</strong></td>
+    </tr>
+    {%for d in range(10, d)%}
+    <tr>
+      <td>{{d}}</td>
+      <td>{{0}}</td>
+      <td>{{0}}</td>
+      <td>{{0}}</td>
+      <td>{{0}}</td>
+      <td>{{0}}</td>
+      <td>{{0}}</td>
+      <td>{{0}}</td>
+      <td>{{0}}</td>
+      <td>{{0}}</td>
+      <td>{{0}}</td>
+    </tr>
+    {%endfor%}
+    <tr>
+      <td>Total Ticket:</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>Invoice Total:</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>

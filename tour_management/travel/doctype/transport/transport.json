@@ -1,0 +1,114 @@
+{
+ "actions": [],
+ "autoname": "T-TPT-.####",
+ "creation": "2020-11-29 16:17:18.116204",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "transporter_name",
+  "vehicle",
+  "vehicle_type",
+  "vehicle_capacity",
+  "column_break_5",
+  "country",
+  "route_sector",
+  "currency",
+  "fair",
+  "fair_per_seat",
+  "section_break_7",
+  "price_list"
+ ],
+ "fields": [
+  {
+   "fieldname": "transporter_name",
+   "fieldtype": "Data",
+   "label": "Transporter Name"
+  },
+  {
+   "fieldname": "vehicle_type",
+   "fieldtype": "Data",
+   "label": "Vehicle Type"
+  },
+  {
+   "fieldname": "vehicle_capacity",
+   "fieldtype": "Data",
+   "label": "Vehicle Capacity"
+  },
+  {
+   "fieldname": "route_sector",
+   "fieldtype": "Data",
+   "label": "Route/ Sector"
+  },
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Data",
+   "label": "Vehicle"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Currency",
+   "label": "Currency"
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break",
+   "hidden": 1
+  },
+  {
+   "fieldname": "price_list",
+   "fieldtype": "Table",
+   "label": "Price List",
+   "options": "Transport Purchasing Price List"
+  },
+  {
+   "fieldname": "fair",
+   "fieldtype": "Currency",
+   "label": "Fare",
+   "options": "currency"
+  },
+  {
+   "fieldname": "fair_per_seat",
+   "fieldtype": "Currency",
+   "label": "Fare Per Seat",
+   "options": "currency"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Country",
+   "options": "Country",
+   "reqd": 1
+  }
+ ],
+ "links": [],
+ "modified": "2020-12-20 16:41:08.380505",
+ "modified_by": "Administrator",
+ "module": "Travel",
+ "name": "Transport",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "transporter_name",
+ "track_changes": 1
+}

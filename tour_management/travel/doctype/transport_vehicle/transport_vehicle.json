@@ -1,0 +1,60 @@
+{
+ "actions": [],
+ "autoname": "field:vehicle",
+ "creation": "2020-12-26 20:53:53.135812",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "vehicle",
+  "vehicle_type",
+  "vehicle_capacity"
+ ],
+ "fields": [
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Vehicle Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "vehicle_type",
+   "fieldtype": "Data",
+   "label": "Vehicle Type"
+  },
+  {
+   "fieldname": "vehicle_capacity",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Vehicle Capacity",
+   "reqd": 1
+  }
+ ],
+ "links": [],
+ "modified": "2020-12-26 20:53:53.135812",
+ "modified_by": "Administrator",
+ "module": "Travel",
+ "name": "Transport Vehicle",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "vehicle",
+ "track_changes": 1
+}

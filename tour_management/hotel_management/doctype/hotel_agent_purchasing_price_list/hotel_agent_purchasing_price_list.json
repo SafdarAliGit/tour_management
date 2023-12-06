@@ -1,0 +1,141 @@
+{
+ "actions": [],
+ "creation": "2020-12-18 23:57:19.080395",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "hotel",
+  "room_type",
+  "rates_valid_from",
+  "rates_valid_till",
+  "column_break_5",
+  "wrent_weekdays",
+  "rent_weekdays",
+  "wrent_weekend",
+  "rent_weekend",
+  "column_break_10",
+  "wextra_bed_charges",
+  "extra_bed_charges",
+  "vat",
+  "meal"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "rent_weekdays",
+   "fieldtype": "Currency",
+   "label": "Rent (Weekdays) Inc VAT",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rates_valid_till",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Rates Valid Till",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "rent_weekend",
+   "fieldtype": "Currency",
+   "label": "Rent (Weekend) Inc VAT",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "extra_bed_charges",
+   "fieldtype": "Currency",
+   "label": "Extra Bed Charges Inc VAT",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rates_valid_from",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Rates Valid From",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "wrent_weekdays",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Rent (Weekdays)",
+   "options": "currency",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "wrent_weekend",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Rent (Weekend)",
+   "options": "currency",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "wextra_bed_charges",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Extra Bed Charges",
+   "options": "currency",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "vat",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "VAT (%)"
+  },
+  {
+   "fieldname": "hotel",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Hotel",
+   "options": "Hotel",
+   "reqd": 1
+  },
+  {
+   "fieldname": "room_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Room Type",
+   "options": "Room Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "meal",
+   "fieldtype": "Link",
+   "label": "Meal",
+   "options": "Meal",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2020-12-26 20:06:17.069390",
+ "modified_by": "Administrator",
+ "module": "Hotel Management",
+ "name": "Hotel Agent Purchasing Price List",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

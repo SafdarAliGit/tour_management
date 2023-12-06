@@ -1,0 +1,285 @@
+{
+ "actions": [],
+ "creation": "2020-12-27 14:39:37.791032",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "room_type",
+  "column_break_2",
+  "rates_valid_from",
+  "column_break_4",
+  "rates_valid_till",
+  "column_break_6",
+  "meal",
+  "section_break_5",
+  "wrent_weekdays",
+  "wrent_weekend",
+  "wextra_bed_charges",
+  "vat",
+  "with_meal",
+  "column_break_5",
+  "rent_weekdays",
+  "rent_weekend",
+  "extra_bed_charges",
+  "based_on_margin",
+  "column_break_10",
+  "margin",
+  "sales_rent_weekdays",
+  "sales_rent_weekend",
+  "sales_extra_bed_charges",
+  "column_break_14",
+  "sales_vat",
+  "sales_rent_weekdays_inc_vat",
+  "sales_rent_weekend_inc_vat",
+  "sales_extra_bed_charges_inc_vat",
+  "section_break_28",
+  "breakfast",
+  "breakfast_rate",
+  "column_break_30",
+  "lunch",
+  "lunch_rate",
+  "column_break_34",
+  "dinner",
+  "dinner_rate"
+ ],
+ "fields": [
+  {
+   "fieldname": "room_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Room Type",
+   "options": "Room Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "wrent_weekdays",
+   "fieldtype": "Currency",
+   "label": "Rent (Weekdays)",
+   "options": "currency",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "rent_weekdays",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Rent (Weekdays) Inc VAT",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "wrent_weekend",
+   "fieldtype": "Currency",
+   "label": "Rent (Weekend)",
+   "options": "currency",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "rent_weekend",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Rent (Weekend) Inc VAT",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "wextra_bed_charges",
+   "fieldtype": "Currency",
+   "label": "Extra Bed Charges",
+   "options": "currency"
+  },
+  {
+   "default": "0",
+   "fieldname": "extra_bed_charges",
+   "fieldtype": "Currency",
+   "label": "Extra Bed Charges Inc VAT",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "vat",
+   "fieldtype": "Float",
+   "label": "VAT (%)"
+  },
+  {
+   "fieldname": "rates_valid_from",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Rates Valid From",
+   "reqd": 1
+  },
+  {
+   "fieldname": "rates_valid_till",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Rates Valid Till",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "sales_rent_weekdays",
+   "fieldtype": "Currency",
+   "label": "Sales Rent (Weekdays)"
+  },
+  {
+   "default": "0",
+   "fieldname": "sales_rent_weekend",
+   "fieldtype": "Currency",
+   "label": "Sales Rent (Weekend)"
+  },
+  {
+   "default": "0",
+   "fieldname": "sales_extra_bed_charges",
+   "fieldtype": "Currency",
+   "label": "Sales Extra Bed Charges"
+  },
+  {
+   "default": "0",
+   "fieldname": "sales_vat",
+   "fieldtype": "Currency",
+   "label": "Sales VAT (%)"
+  },
+  {
+   "default": "0",
+   "fieldname": "sales_rent_weekdays_inc_vat",
+   "fieldtype": "Currency",
+   "label": "Sales Rent (Weekdays) Inc VAT",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "sales_rent_weekend_inc_vat",
+   "fieldtype": "Currency",
+   "label": "Sales Rent (Weekend) Inc VAT",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "sales_extra_bed_charges_inc_vat",
+   "fieldtype": "Currency",
+   "label": "Sales Extra Bed Charges Inc VAT",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "margin",
+   "fieldtype": "Percent",
+   "label": "Margin (%)"
+  },
+  {
+   "default": "0",
+   "fieldname": "based_on_margin",
+   "fieldtype": "Check",
+   "label": "Based on Margin"
+  },
+  {
+   "depends_on": "eval:doc.with_meal",
+   "fieldname": "section_break_28",
+   "fieldtype": "Section Break",
+   "hidden": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "breakfast",
+   "fieldtype": "Check",
+   "label": "Include Breakfast"
+  },
+  {
+   "fieldname": "column_break_30",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "breakfast_rate",
+   "fieldtype": "Currency",
+   "label": "Breakfast Rate"
+  },
+  {
+   "default": "0",
+   "fieldname": "lunch",
+   "fieldtype": "Check",
+   "label": "Include Lunch"
+  },
+  {
+   "default": "0",
+   "fieldname": "dinner",
+   "fieldtype": "Check",
+   "label": "Include Dinner"
+  },
+  {
+   "default": "0",
+   "fieldname": "lunch_rate",
+   "fieldtype": "Currency",
+   "label": "Lunch Rate"
+  },
+  {
+   "default": "0",
+   "fieldname": "dinner_rate",
+   "fieldtype": "Currency",
+   "label": "Dinner Rate"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "with_meal",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Add Meal"
+  },
+  {
+   "fieldname": "column_break_34",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "RO",
+   "fieldname": "meal",
+   "fieldtype": "Select",
+   "label": "Meal",
+   "options": "RO\nBB\nHB\nFB"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2021-02-07 02:50:19.257670",
+ "modified_by": "Administrator",
+ "module": "Hotel Management",
+ "name": "Hotel Room Purchasing Price List",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

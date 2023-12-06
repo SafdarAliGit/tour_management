@@ -1,0 +1,108 @@
+{
+ "actions": [],
+ "creation": "2021-07-02 12:02:47.167733",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "ticket",
+  "ticket_no",
+  "pnr_no",
+  "ticket_cost",
+  "ticket_price",
+  "xo_agent",
+  "airline",
+  "section_break_8",
+  "returned",
+  "ticket_for"
+ ],
+ "fields": [
+  {
+   "allow_on_submit": 1,
+   "fieldname": "ticket",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Ticket",
+   "options": "Ticket",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "ticket.ticket_no",
+   "fieldname": "ticket_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Ticket No",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "ticket.pnr_no",
+   "fieldname": "pnr_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "PNR No",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "ticket.ticket_price",
+   "fieldname": "ticket_price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Ticket Price",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "ticket.ticket_cost",
+   "fieldname": "ticket_cost",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Ticket Cost",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "ticket.xo_agent",
+   "fieldname": "xo_agent",
+   "fieldtype": "Link",
+   "label": "XO Agent",
+   "options": "XO Agent"
+  },
+  {
+   "fetch_from": "ticket.airline",
+   "fieldname": "airline",
+   "fieldtype": "Link",
+   "label": "Airline",
+   "options": "Airline"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fetch_from": "ticket.returned",
+   "fieldname": "returned",
+   "fieldtype": "Check",
+   "label": "Returned",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "ticket.ticket_for",
+   "fieldname": "ticket_for",
+   "fieldtype": "Data",
+   "label": "Ticket for",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2021-09-06 21:04:09.539579",
+ "modified_by": "Administrator",
+ "module": "Tour Management",
+ "name": "Booking Ticket",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

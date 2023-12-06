@@ -1,0 +1,190 @@
+{
+ "actions": [],
+ "creation": "2021-05-03 20:28:18.480403",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "source",
+  "destination",
+  "currency",
+  "column_break_4",
+  "departure_date",
+  "return_date",
+  "column_break_8",
+  "adults",
+  "childern",
+  "column_break_12",
+  "infants",
+  "section_break_13",
+  "get_data",
+  "details",
+  "datas",
+  "passenger_details",
+  "passengers",
+  "book",
+  "section_break_19",
+  "flight",
+  "column_break_21",
+  "travelers",
+  "reference_number",
+  "get_details",
+  "section_break_23",
+  "books"
+ ],
+ "fields": [
+  {
+   "fieldname": "source",
+   "fieldtype": "Link",
+   "label": "Source",
+   "options": "City"
+  },
+  {
+   "fieldname": "destination",
+   "fieldtype": "Link",
+   "label": "Destination",
+   "options": "City"
+  },
+  {
+   "fieldname": "departure_date",
+   "fieldtype": "Date",
+   "label": "Departure Date"
+  },
+  {
+   "fieldname": "return_date",
+   "fieldtype": "Date",
+   "label": "Return Date"
+  },
+  {
+   "fieldname": "adults",
+   "fieldtype": "Int",
+   "label": "Adults"
+  },
+  {
+   "fieldname": "childern",
+   "fieldtype": "Int",
+   "label": "Childern"
+  },
+  {
+   "fieldname": "infants",
+   "fieldtype": "Int",
+   "label": "Infants"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "datas",
+   "fieldtype": "HTML",
+   "label": "Datas"
+  },
+  {
+   "fieldname": "get_data",
+   "fieldtype": "Button",
+   "label": "Search Flights"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_13",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "book",
+   "fieldtype": "Button",
+   "label": "Book"
+  },
+  {
+   "fieldname": "section_break_19",
+   "fieldtype": "Section Break",
+   "hidden": 1
+  },
+  {
+   "fieldname": "flight",
+   "fieldtype": "Small Text",
+   "label": "Flight"
+  },
+  {
+   "fieldname": "column_break_21",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "travelers",
+   "fieldtype": "Small Text",
+   "label": "Travelers"
+  },
+  {
+   "fieldname": "section_break_23",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "reference_number",
+   "fieldtype": "Data",
+   "label": "Reference Number"
+  },
+  {
+   "fieldname": "get_details",
+   "fieldtype": "Button",
+   "label": "Get Details"
+  },
+  {
+   "fieldname": "passengers",
+   "fieldtype": "Table",
+   "label": "Passengers",
+   "options": "Ticket Passenger Detail"
+  },
+  {
+   "default": "0",
+   "fieldname": "books",
+   "fieldtype": "Check",
+   "label": "Books"
+  },
+  {
+   "fieldname": "details",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "passenger_details",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Ticket Passenger Details"
+  }
+ ],
+ "hide_toolbar": 1,
+ "in_create": 1,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2021-06-19 22:35:39.086519",
+ "modified_by": "Administrator",
+ "module": "Travel",
+ "name": "Flight Search",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

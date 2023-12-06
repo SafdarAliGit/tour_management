@@ -1,0 +1,98 @@
+{
+ "actions": [],
+ "creation": "2021-01-14 20:02:51.953045",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "default_hotel_item",
+  "default_visa_item",
+  "column_break_3",
+  "default_transport_item",
+  "default_add_on_service_item",
+  "column_break_6",
+  "default_ticket_item",
+  "default_ticket_return_item",
+  "default_accounts_section",
+  "default_payment_receipt_account"
+ ],
+ "fields": [
+  {
+   "fieldname": "default_hotel_item",
+   "fieldtype": "Link",
+   "label": "Default Hotel Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "default_visa_item",
+   "fieldtype": "Link",
+   "label": "Default Visa Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "default_transport_item",
+   "fieldtype": "Link",
+   "label": "Default Transport Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "default_add_on_service_item",
+   "fieldtype": "Link",
+   "label": "Default Add on Service Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "default_ticket_item",
+   "fieldtype": "Link",
+   "label": "Default Ticket Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "default_ticket_return_item",
+   "fieldtype": "Link",
+   "label": "Default Ticket Return Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "default_accounts_section",
+   "fieldtype": "Section Break",
+   "label": "Default Accounts"
+  },
+  {
+   "fieldname": "default_payment_receipt_account",
+   "fieldtype": "Link",
+   "label": "Default Payment Receipt Account",
+   "options": "Account"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2022-08-03 20:15:02.754474",
+ "modified_by": "Administrator",
+ "module": "Tour Management",
+ "name": "Booking Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

@@ -1,0 +1,714 @@
+{
+ "actions": [],
+ "autoname": "TM-TP-.YYYY.-.####",
+ "creation": "2021-01-29 18:47:15.785129",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "booking_info_section",
+  "column_break_4",
+  "package_title",
+  "booking_of",
+  "column_break_8",
+  "due_date",
+  "column_break_3",
+  "destination_country",
+  "country_code",
+  "section_break_23",
+  "qty_adult",
+  "column_break_25",
+  "qty_child",
+  "column_break_27",
+  "qty_infant",
+  "erp",
+  "column_break_29",
+  "qty_total",
+  "ers",
+  "booking_visa_details_section",
+  "visa_type",
+  "visa_days",
+  "visa_currency",
+  "column_break_39",
+  "visa_agent",
+  "agent_reference_no",
+  "agent_name",
+  "column_break_44",
+  "visa_agent_price_list",
+  "visa_selling_price_list",
+  "section_break_24",
+  "visa_qty_adult",
+  "visa_qty_child",
+  "visa_qty_infant",
+  "cb",
+  "price_adult",
+  "price_child",
+  "price_infant",
+  "column_break_32",
+  "cost_adult",
+  "cost_child",
+  "cost_infant",
+  "column_break_36",
+  "visa_total_adult",
+  "visa_total_child",
+  "visa_total_infant",
+  "column_break_68",
+  "total_visa_cost",
+  "total_visa_cost_pkr",
+  "column_break_71",
+  "total_visa_amount",
+  "total_visa_amount_pkr",
+  "tickets_section",
+  "tickets",
+  "section_break_80",
+  "total_ticket_purchase_amount",
+  "column_break_47",
+  "total_ticket_sales_amount",
+  "booking_hotel_details_section",
+  "hotels",
+  "section_break_86",
+  "hotel_total_purchase_amount",
+  "column_break_88",
+  "hotel_total_sales_amount",
+  "booking_transports_section",
+  "transports",
+  "section_break_92",
+  "transport_total_purchase_amount",
+  "column_break_94",
+  "transport_total_sales_amount",
+  "add_on_services_section",
+  "addons",
+  "section_break_98",
+  "add_on_total_purchase_amount",
+  "column_break_100",
+  "add_on_total_sales_amount",
+  "package_rates_section",
+  "package_rate_adult",
+  "column_break_106",
+  "package_rate_child",
+  "column_break_108",
+  "package_rate_infant",
+  "totals_section",
+  "visa_purchase_total",
+  "visa_sales_total",
+  "column_break_107",
+  "hotel_purchase_total",
+  "hotel_sales_total",
+  "column_break_110",
+  "transport_purchase_total",
+  "transport_sales_total",
+  "column_break_113",
+  "add_ons_purchase_total",
+  "add_ons_sales_total",
+  "column_break_116",
+  "ticket_purchase_total",
+  "ticket_sales_total",
+  "column_break_119",
+  "gross_purchase_total",
+  "gross_sales_total"
+ ],
+ "fields": [
+  {
+   "fieldname": "booking_info_section",
+   "fieldtype": "Section Break",
+   "label": "Booking Info"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "package_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Package Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "booking_of",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Booking of",
+   "options": "Tour\nUmrah\nHajj",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "label": "Due Date"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "destination_country",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Destination Country",
+   "options": "Country",
+   "read_only_depends_on": "eval:doc.booking_of != 'Tour'",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "destination_country.code",
+   "fieldname": "country_code",
+   "fieldtype": "Data",
+   "label": "Country Code",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_23",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "qty_adult",
+   "fieldtype": "Int",
+   "label": "Qty (Adult)"
+  },
+  {
+   "fieldname": "column_break_25",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "qty_child",
+   "fieldtype": "Int",
+   "label": "Qty (Child)"
+  },
+  {
+   "fieldname": "column_break_27",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "qty_infant",
+   "fieldtype": "Int",
+   "label": "Qty (Infant)"
+  },
+  {
+   "fieldname": "erp",
+   "fieldtype": "Float",
+   "label": "Exchange Rate (Purchase)"
+  },
+  {
+   "fieldname": "column_break_29",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "qty_total",
+   "fieldtype": "Int",
+   "label": "Qty (Total)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ers",
+   "fieldtype": "Float",
+   "label": "Exchange Rate (Sales)"
+  },
+  {
+   "fieldname": "booking_visa_details_section",
+   "fieldtype": "Section Break",
+   "label": "Booking Visa Details"
+  },
+  {
+   "fieldname": "visa_type",
+   "fieldtype": "Link",
+   "label": "Visa Type",
+   "options": "Visa Type"
+  },
+  {
+   "fetch_from": "visa_service.visa_validity_days",
+   "fieldname": "visa_days",
+   "fieldtype": "Int",
+   "label": "Visa Days",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "visa_service.currency",
+   "fieldname": "visa_currency",
+   "fieldtype": "Link",
+   "label": "Visa Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "column_break_39",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "visa_agent",
+   "fieldtype": "Link",
+   "label": "Visa Agent",
+   "options": "Visa Agent"
+  },
+  {
+   "fieldname": "agent_reference_no",
+   "fieldtype": "Data",
+   "label": "Agent Reference No"
+  },
+  {
+   "fetch_from": "visa_agent.agent_name",
+   "fieldname": "agent_name",
+   "fieldtype": "Data",
+   "label": "Agent Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_44",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: doc.destination_country && doc.visa_type && doc.visa_agent",
+   "fieldname": "visa_agent_price_list",
+   "fieldtype": "Link",
+   "label": "Visa Agent Price List",
+   "options": "Visa Agent Price List"
+  },
+  {
+   "fieldname": "visa_selling_price_list",
+   "fieldtype": "Link",
+   "label": "Visa Selling Price List",
+   "options": "Visa Selling Price List"
+  },
+  {
+   "fieldname": "section_break_24",
+   "fieldtype": "Section Break",
+   "label": "Visa Costing"
+  },
+  {
+   "default": "0",
+   "fieldname": "visa_qty_adult",
+   "fieldtype": "Int",
+   "label": "Visa Qty (Adult)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "visa_qty_child",
+   "fieldtype": "Int",
+   "label": "Visa Qty (Child)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "visa_qty_infant",
+   "fieldtype": "Int",
+   "label": "Visa Qty (Infant)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "price_adult",
+   "fieldtype": "Currency",
+   "label": "Price (Adult)",
+   "options": "visa_currency"
+  },
+  {
+   "fetch_if_empty": 1,
+   "fieldname": "price_child",
+   "fieldtype": "Currency",
+   "label": "Price (Child)",
+   "options": "visa_currency"
+  },
+  {
+   "fetch_if_empty": 1,
+   "fieldname": "price_infant",
+   "fieldtype": "Currency",
+   "label": "Price (Infant)",
+   "options": "visa_currency"
+  },
+  {
+   "fieldname": "column_break_32",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cost_adult",
+   "fieldtype": "Currency",
+   "label": "Cost (Adult)",
+   "options": "visa_currency"
+  },
+  {
+   "fieldname": "cost_child",
+   "fieldtype": "Currency",
+   "label": "Cost (Child)",
+   "options": "visa_currency"
+  },
+  {
+   "fieldname": "cost_infant",
+   "fieldtype": "Currency",
+   "label": "Cost (Infant)",
+   "options": "visa_currency"
+  },
+  {
+   "fieldname": "column_break_36",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "visa_total_adult",
+   "fieldtype": "Currency",
+   "label": "Visa Total (Adult)",
+   "options": "visa_currency",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "visa_total_child",
+   "fieldtype": "Currency",
+   "label": "Visa Total (Child)",
+   "options": "visa_currency",
+   "read_only": 1
+  },
+  {
+   "columns": 4,
+   "default": "0",
+   "fieldname": "visa_total_infant",
+   "fieldtype": "Currency",
+   "label": "Visa Total (Infant)",
+   "options": "visa_currency",
+   "read_only": 1,
+   "width": "40px"
+  },
+  {
+   "fieldname": "column_break_68",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_visa_cost",
+   "fieldtype": "Currency",
+   "label": "Total Visa Cost",
+   "options": "visa_currency",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_visa_cost_pkr",
+   "fieldtype": "Currency",
+   "label": "Total Visa Cost (PKR)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_71",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_visa_amount",
+   "fieldtype": "Currency",
+   "label": "Total Visa Amount",
+   "options": "visa_currency",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_visa_amount_pkr",
+   "fieldtype": "Currency",
+   "label": "Total Visa Amount (PKR)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tickets_section",
+   "fieldtype": "Section Break",
+   "label": "Tickets"
+  },
+  {
+   "fieldname": "tickets",
+   "fieldtype": "Table",
+   "label": "Tickets",
+   "options": "Package Ticket"
+  },
+  {
+   "fieldname": "section_break_80",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_ticket_purchase_amount",
+   "fieldtype": "Currency",
+   "label": "Total Ticket Purchase Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_47",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_ticket_sales_amount",
+   "fieldtype": "Currency",
+   "label": "Total Ticket Sales Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "booking_hotel_details_section",
+   "fieldtype": "Section Break",
+   "label": "Booking Hotel Details"
+  },
+  {
+   "fieldname": "hotels",
+   "fieldtype": "Table",
+   "label": "Hotels",
+   "options": "Package Hotel"
+  },
+  {
+   "fieldname": "section_break_86",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "hotel_total_purchase_amount",
+   "fieldtype": "Currency",
+   "label": "Hotel Total Purchase Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_88",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "hotel_total_sales_amount",
+   "fieldtype": "Currency",
+   "label": "Hotel Total Sales Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "booking_transports_section",
+   "fieldtype": "Section Break",
+   "label": "Booking Transports"
+  },
+  {
+   "fieldname": "transports",
+   "fieldtype": "Table",
+   "label": "Transports",
+   "options": "Package Transport"
+  },
+  {
+   "fieldname": "section_break_92",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "transport_total_purchase_amount",
+   "fieldtype": "Currency",
+   "label": "Transport Total Purchase Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_94",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "transport_total_sales_amount",
+   "fieldtype": "Currency",
+   "label": "Transport Total Sales Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "add_on_services_section",
+   "fieldtype": "Section Break",
+   "label": "Add On Services"
+  },
+  {
+   "fieldname": "addons",
+   "fieldtype": "Table",
+   "label": "Add Ons",
+   "options": "Package Add on Service"
+  },
+  {
+   "fieldname": "section_break_98",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "add_on_total_purchase_amount",
+   "fieldtype": "Currency",
+   "label": "Add On Total Purchase Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_100",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "add_on_total_sales_amount",
+   "fieldtype": "Currency",
+   "label": "Add On Total Sales Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "package_rates_section",
+   "fieldtype": "Section Break",
+   "label": "Package Rates"
+  },
+  {
+   "default": "0",
+   "fieldname": "package_rate_adult",
+   "fieldtype": "Currency",
+   "label": "Package Rate (Adult)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_106",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "package_rate_child",
+   "fieldtype": "Currency",
+   "label": "Package Rate (Child)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_108",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "package_rate_infant",
+   "fieldtype": "Currency",
+   "label": "Package Rate (Infant)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "totals_section",
+   "fieldtype": "Section Break",
+   "label": "Totals"
+  },
+  {
+   "default": "0",
+   "fieldname": "visa_purchase_total",
+   "fieldtype": "Currency",
+   "label": "Visa Purchase",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "visa_sales_total",
+   "fieldtype": "Currency",
+   "label": "Visa Sales",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_107",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "hotel_purchase_total",
+   "fieldtype": "Currency",
+   "label": "Hotel Purchase",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "hotel_sales_total",
+   "fieldtype": "Currency",
+   "label": "Hotel Sales",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_110",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "transport_purchase_total",
+   "fieldtype": "Currency",
+   "label": "Transport Purchase",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "transport_sales_total",
+   "fieldtype": "Currency",
+   "label": "Transport Sales",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_113",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "add_ons_purchase_total",
+   "fieldtype": "Currency",
+   "label": "Add Ons Purchase",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "add_ons_sales_total",
+   "fieldtype": "Currency",
+   "label": "Add Ons Sales",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_116",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "ticket_purchase_total",
+   "fieldtype": "Currency",
+   "label": "Ticket Purchase",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "ticket_sales_total",
+   "fieldtype": "Currency",
+   "label": "Ticket Sales",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_119",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "gross_purchase_total",
+   "fieldtype": "Currency",
+   "label": "Gross Purchase",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "gross_sales_total",
+   "fieldtype": "Currency",
+   "label": "Gross Sales",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "modified": "2021-01-30 22:02:29.134611",
+ "modified_by": "Administrator",
+ "module": "Tour Management",
+ "name": "Tour Package",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "package_title"
+}

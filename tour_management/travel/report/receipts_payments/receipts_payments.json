@@ -1,0 +1,36 @@
+{
+ "add_total_row": 1,
+ "columns": [],
+ "creation": "2021-11-14 16:41:33.359873",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "mandatory": 1,
+   "options": "Customer",
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2021-11-14 16:42:42.252993",
+ "modified_by": "Administrator",
+ "module": "Travel",
+ "name": "Receipts Payments",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "select\nposting_date as \"Date:Date:150\",\nname as \"Voucher No:Data:200\",\nreference_no as \"Cheque No:Data:140\",\nremarks as \"Remarks:Small Text:500\",\npaid_amount as \"Receipts (Credit):Currency:150\",\n0 as \"Payments (Debit):Currency:150\"\n\n\n\n\nfrom\n\n`tabPayment Entry`\nwhere docstatus = 1\nand party = %(customer)s\n\norder by posting_date asc, name asc",
+ "ref_doctype": "Tour Booking",
+ "report_name": "Receipts Payments",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}
