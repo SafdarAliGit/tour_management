@@ -317,9 +317,11 @@
    "label": "Other Service Charges SAR"
   },
   {
+   "default": "0",
    "fieldname": "total_package_sar",
    "fieldtype": "Data",
-   "label": "Total Package SAR"
+   "label": "Total Package SAR",
+   "read_only": 1
   },
   {
    "fieldname": "exchange_rate",
@@ -327,9 +329,11 @@
    "label": "Exchange Rate"
   },
   {
+   "default": "0",
    "fieldname": "total_amount_pkr",
    "fieldtype": "Data",
-   "label": "Total Amount PKR"
+   "label": "Total Amount PKR",
+   "read_only": 1
   },
   {
    "fieldname": "advance_pkr",
@@ -342,9 +346,11 @@
    "label": "Discount PKR"
   },
   {
+   "default": "0",
    "fieldname": "balance_pkr",
    "fieldtype": "Data",
-   "label": "Balance PKR"
+   "label": "Balance PKR",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_ujjvm",
@@ -394,7 +400,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-12-06 23:17:22.421224",
+ "modified": "2023-12-07 15:53:01.752790",
  "modified_by": "Administrator",
  "module": "Tour Management",
  "name": "Hajj Booking",
