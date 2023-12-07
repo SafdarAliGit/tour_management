@@ -53,7 +53,7 @@ function calculateTotalPackage(frm) {
     frm.set_value('total_package_sar', total_package_sar);
 
     if (exchange_rate) {
-        total_amount_pkr = cint(total_package_sar) / cint(exchange_rate);
+        total_amount_pkr = cint(total_package_sar) * cint(exchange_rate);
         frm.set_value('total_amount_pkr', total_amount_pkr.toFixed(0));
     }
     frm.set_value('balance_pkr', (cint(total_amount_pkr)-(cint(advance_pkr)+cint(discount_pkr))).toFixed(0));
