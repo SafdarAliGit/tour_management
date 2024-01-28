@@ -1,0 +1,63 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-01-28 07:44:19.669017",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "city",
+  "hotel",
+  "nights",
+  "room_type",
+  "meal"
+ ],
+ "fields": [
+  {
+   "fieldname": "city",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "City",
+   "options": "City"
+  },
+  {
+   "fieldname": "hotel",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Hotel",
+   "options": "Hotel"
+  },
+  {
+   "fieldname": "nights",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Nights"
+  },
+  {
+   "fieldname": "room_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Room Type",
+   "options": "Room Type"
+  },
+  {
+   "fieldname": "meal",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Meal",
+   "options": "HB\nFB\nOB\nMaktab"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-01-28 07:45:48.043821",
+ "modified_by": "Administrator",
+ "module": "Tour Management",
+ "name": "Package Hotel Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
