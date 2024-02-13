@@ -67,41 +67,37 @@ function calculateTotalPackage(frm) {
 
 
 function get_hajj_package(frm, hajj_package_id) {
+    console.log(hajj_package_id);
     if (hajj_package_id) {
         frappe.call({
             method: "tour_management.tour_management.doctype.utils.get_hajj_package.get_hajj_package",
             args: {
                 hajj_package_id: hajj_package_id
-            }, callback: function (response) {
-                frm.set_value('package_duration', response.message.hajj_package[0].term);
-                frm.set_value('days', response.message.hajj_package[0].days);
+            },
+            callback: function (response) {
+                if (response.message.hajj_package.length > 0) {
+                    var packageData = response.message.hajj_package[0];
+                    frm.set_value('package_duration', packageData.term);
+                    frm.set_value('days', packageData.days);
+                }
 
-                var child_hotels = response.message.hotel_detail;
-                var child_flights = response.message.flight_detail;
+                if (response.message.hotel_detail) {
+                    response.message.hotel_detail.forEach(function (hotel) {
+                        var entry = frm.add_child("hotels");
+                        Object.assign(entry, hotel);
+                    });
+                }
 
-                $.each(child_hotels, function (_i, e) {
+                if (response.message.flight_detail) {
+                    response.message.flight_detail.forEach(function (flight) {
+                        var entry = frm.add_child("hajj_flight_detail");
+                        Object.assign(entry, flight);
+                    });
+                }
 
-                    let entry = frm.add_child("hotels");
-                        entry.city = e.city,
-                        entry.hotel = e.hotel,
-                        entry.nights = e.nights,
-                        entry.room_type = e.room_type,
-                        entry.meal = e.meal
-                })
-
-
-                $.each(child_flights, function (_i, e) {
-
-                    let entry = frm.add_child("hajj_flight_detail");
-                        entry.type = e.type,
-                        entry.cls = e.cls,
-                        entry.airline = e.airline
-                })
-                frm.refresh('hotels');
-                frm.refresh('hajj_flight_detail');
-
+                frm.refresh_field('hotels');
+                frm.refresh_field('hajj_flight_detail');
             }
         });
-
     }
 }
