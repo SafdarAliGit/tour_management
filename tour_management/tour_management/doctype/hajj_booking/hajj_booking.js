@@ -69,6 +69,10 @@ function calculateTotalPackage(frm) {
 function get_hajj_package(frm, hajj_package_id) {
     console.log(hajj_package_id);
     if (hajj_package_id) {
+        // Clear existing data before adding new entries
+        frm.clear_table("hotels");
+        frm.clear_table("hajj_flight_detail");
+
         frappe.call({
             method: "tour_management.tour_management.doctype.utils.get_hajj_package.get_hajj_package",
             args: {
