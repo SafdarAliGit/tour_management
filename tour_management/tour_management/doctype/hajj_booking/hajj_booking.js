@@ -83,15 +83,21 @@ function get_hajj_package(frm, hajj_package_id) {
 
                 if (response.message.hotel_detail) {
                     response.message.hotel_detail.forEach(function (hotel) {
-                        var entry = frm.add_child("hotels");
-                        Object.assign(entry, hotel);
+                        let entry = frm.add_child("hotels");
+                        entry.city = hotel.city,
+                        entry.hotel = hotel.hotel,
+                        entry.nights = hotel.nights,
+                        entry.room_type = hotel.room_type,
+                        entry.meal = hotel.meal
                     });
                 }
 
                 if (response.message.flight_detail) {
                     response.message.flight_detail.forEach(function (flight) {
                         var entry = frm.add_child("hajj_flight_detail");
-                        Object.assign(entry, flight);
+                        entry.type = flight.type,
+                        entry.cls = flight.cls,
+                        entry.airline = flight.airline
                     });
                 }
 
