@@ -30,9 +30,9 @@ frappe.ui.form.on('Hajj Booking', {
     discount_pkr: function (frm) {
         calculateTotalPackage(frm);
     },
-    hajj_package: function (frm, cdt, cdn) {
+    hajj_package: function (frm) {
         var hajj_package_id = frm.doc.hajj_package;
-        get_hajj_package(frm, cdt, cdn, hajj_package_id);
+        get_hajj_package(frm, hajj_package_id);
     }
 
 });
@@ -66,8 +66,7 @@ function calculateTotalPackage(frm) {
 }
 
 
-function get_hajj_package(frm, cdt, cdn, hajj_package_id) {
-
+function get_hajj_package(frm, hajj_package_id) {
     if (hajj_package_id) {
         frappe.call({
             method: "tour_management.tour_management.doctype.utils.get_hajj_package.get_hajj_package",
