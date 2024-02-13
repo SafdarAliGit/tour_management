@@ -24,12 +24,17 @@ frappe.ui.form.on('Hajj Booking', {
     },
 
     advance_pkr: function (frm) {
-       calculateTotalPackage(frm);
+        calculateTotalPackage(frm);
     },
 
     discount_pkr: function (frm) {
-       calculateTotalPackage(frm);
+        calculateTotalPackage(frm);
     },
+    hajj_package: function (frm, cdt, cdn) {
+        var hajj_package_id = frm.doc.hajj_package;
+        get_hajj_package(frm, cdt, cdn, hajj_package_id);
+    }
+
 });
 
 function calculateTotalPackage(frm) {
@@ -56,8 +61,48 @@ function calculateTotalPackage(frm) {
         total_amount_pkr = cint(total_package_sar) * cint(exchange_rate);
         frm.set_value('total_amount_pkr', total_amount_pkr.toFixed(0));
     }
-    frm.set_value('balance_pkr', (cint(total_amount_pkr)-(cint(advance_pkr)+cint(discount_pkr))).toFixed(0));
+    frm.set_value('balance_pkr', (cint(total_amount_pkr) - (cint(advance_pkr) + cint(discount_pkr))).toFixed(0));
 
 }
 
 
+function get_hajj_package(frm, cdt, cdn, hajj_package_id) {
+
+    if (hajj_package_id) {
+        frappe.call({
+            method: "tour_management.tour_management.doctype.utils.get_hajj_package.get_hajj_package",
+            args: {
+                hajj_package_id: hajj_package_id
+            }, callback: function (response) {
+                frm.set_value('package_duration', response.message.hajj_package[0].term);
+                frm.set_value('days', response.message.hajj_package[0].days);
+
+                var child_hotels = response.message.hotel_detail;
+                var child_flights = response.message.flight_detail;
+
+                $.each(child_hotels, function (_i, e) {
+
+                    let entry = frm.add_child("hotels");
+                        entry.city = e.city,
+                        entry.hotel = e.hotel,
+                        entry.nights = e.nights,
+                        entry.room_type = e.room_type,
+                        entry.meal = e.meal
+                })
+
+
+                $.each(child_flights, function (_i, e) {
+
+                    let entry = frm.add_child("hajj_flight_detail");
+                        entry.type = e.type,
+                        entry.cls = e.cls,
+                        entry.airline = e.airline
+                })
+                frm.refresh('hotels');
+                frm.refresh('hajj_flight_detail');
+
+            }
+        });
+
+    }
+}
