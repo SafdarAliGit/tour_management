@@ -59,6 +59,7 @@
   "total_visa_amount",
   "total_visa_amount_pkr",
   "tickets_section",
+  "tickets",
   "section_break_80",
   "total_ticket_purchase_amount",
   "column_break_47",
@@ -110,8 +111,7 @@
   {
    "fieldname": "booking_info_section",
    "fieldtype": "Section Break",
-   "label": "Booking Info",
-   "options": "Package Ticket"
+   "label": "Booking Info"
   },
   {
    "fieldname": "column_break_4",
@@ -419,6 +419,12 @@
    "label": "Tickets"
   },
   {
+   "fieldname": "tickets",
+   "fieldtype": "Table",
+   "label": "Tickets",
+   "options": "Package Ticket"
+  },
+  {
    "fieldname": "section_break_80",
    "fieldtype": "Section Break"
   },
@@ -683,11 +689,10 @@
   }
  ],
  "links": [],
- "modified": "2023-12-18 19:49:01.202984",
+ "modified": "2021-01-30 22:02:29.134611",
  "modified_by": "Administrator",
  "module": "Tour Management",
  "name": "Tour Package",
- "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {
@@ -705,6 +710,5 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
  "title_field": "package_title"
 }
